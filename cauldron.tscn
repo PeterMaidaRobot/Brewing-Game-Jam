@@ -6,9 +6,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_7dadi"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 5, -10, 0, 0, 0, 0, 12, -8, 0, 0, 0, 0, 5, -6, 0, 0, 0, 0, -2, -6, 0, 0, 0, 0, -10, -6, 0, 0, 0, 0, -14, -8, 0, 0, 0, 0, -8, -10, 0, 0, 0, 0, 0, -10)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -9, 0, 0, 0, 0, 1, -8, 0, 0, 0, 0, 0, -7, 0, 0, 0, 0, -1, -8, 0, 0, 0, 0, 0, -9)
 }
-point_count = 9
+point_count = 5
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0t22i"]
 animations = [{
@@ -33,7 +33,9 @@ metadata/_edit_group_ = true
 curve = SubResource("Curve2D_7dadi")
 
 [node name="SmokeSpawnLocation" type="PathFollow2D" parent="SmokePath" unique_id=193847215]
-position = Vector2(0, -10)
+position = Vector2(0, -9)
+rotation = -0.78539807
+progress = 5.656854
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=557946684]
 position = Vector2(-1.9073486e-06, -1.9073486e-06)
@@ -47,5 +49,7 @@ shape = SubResource("RectangleShape2D_q3ljf")
 [node name="SmokeTimer" type="Timer" parent="." unique_id=58284568]
 wait_time = 0.5
 autostart = true
+
+[node name="SmokeSpawnLocation2" type="Marker2D" parent="." unique_id=54031495]
 
 [connection signal="timeout" from="SmokeTimer" to="." method="_on_smoke_timer_timeout"]
