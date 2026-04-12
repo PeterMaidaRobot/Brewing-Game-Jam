@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+signal lose_game
+
+
 @export var speed = 400 # pixels per second player speed
 var screen_size # game window size
 
@@ -51,3 +54,4 @@ func _physics_process(delta: float) -> void:
 func _on_smoke_hitbox_body_entered(body: Node2D) -> void:	
 	if body.is_in_group("Smoke"):
 		print("Smoke hit, you lose!")
+		lose_game.emit()

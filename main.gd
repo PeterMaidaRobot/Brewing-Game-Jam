@@ -1,6 +1,5 @@
-extends Area2D
+extends Node
 
-signal win_game
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,7 +11,9 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
-		print("Goal!")
-		win_game.emit()
+func _on_goal_win_game() -> void:
+	$GUI.show_you_win()
+
+
+func _on_player_lose_game() -> void:
+	$GUI.show_you_lose()

@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://dey8j1cewm681"]
 
 [ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://goal.tscn" id="1_1bvp3"]
+[ext_resource type="Script" uid="uid://byrlqg2wnto88" path="res://main.gd" id="1_7mycd"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://cauldron.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://log.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c74ju7qn5hur3" path="res://gui.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node" unique_id=1821337530]
+script = ExtResource("1_7mycd")
 
 [node name="Background" type="ColorRect" parent="." unique_id=943120867]
 anchors_preset = 15
@@ -83,3 +85,6 @@ position = Vector2(565, 614)
 position = Vector2(732, 352)
 
 [node name="GUI" parent="." unique_id=194733547 instance=ExtResource("5_lquwl")]
+
+[connection signal="win_game" from="Goal" to="." method="_on_goal_win_game"]
+[connection signal="lose_game" from="Player" to="." method="_on_player_lose_game"]
