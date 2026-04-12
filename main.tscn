@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://player.tscn" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://cauldron.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://log.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://witch.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://c74ju7qn5hur3" path="res://gui.tscn" id="5_lquwl"]
 
 [node name="Main" type="Node" unique_id=1821337530]
@@ -80,6 +81,9 @@ scale = Vector2(5.8819265, 2.8393373)
 
 [node name="Player" parent="." unique_id=731321046 instance=ExtResource("1_ig7tw")]
 position = Vector2(565, 614)
+
+[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("5_272bh")]
+position = Vector2(760, 332)
 
 [node name="Cauldron" parent="." unique_id=668525729 instance=ExtResource("2_0xm2m")]
 position = Vector2(732, 352)

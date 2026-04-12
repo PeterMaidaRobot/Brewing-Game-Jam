@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://d0mfjusp8jcmh"]
 
-[ext_resource type="Texture2D" uid="uid://cde16kul1bvva" path="res://art/witch.jpg" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://dfo7r770s3ix8" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dqro0amu2p0ir" path="res://art/player.png" id="2_i3pqv"]
 [ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://fan.tscn" id="3_i3pqv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_4flbx")
+"texture": ExtResource("2_i3pqv")
 }],
 "loop": true,
 "name": &"stand",
@@ -16,25 +16,28 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(58, 58)
+size = Vector2(23, 42)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
-size = Vector2(57, 56)
+size = Vector2(23.076027, 44)
 
 [node name="Player" type="CharacterBody2D" unique_id=1573098926]
+scale = Vector2(2, 2)
 script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=813636378]
-scale = Vector2(0.07744565, 0.07744565)
+scale = Vector2(0.287, 0.287)
 sprite_frames = SubResource("SpriteFrames_onrkg")
 animation = &"stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=908861233]
+position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Fan" parent="." unique_id=1725732873 instance=ExtResource("3_i3pqv")]
-position = Vector2(0, -57)
+position = Vector2(-1, -69)
+scale = Vector2(0.640001, 1)
 
 [node name="SmokeHitbox" type="Area2D" parent="." unique_id=346136574]
 scale = Vector2(0.99670535, 1)
@@ -42,7 +45,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmokeHitbox" unique_id=1127072397]
-position = Vector2(-0.5, 0)
+position = Vector2(-1.5049595, -6)
 shape = SubResource("RectangleShape2D_i3pqv")
 debug_color = Color(0.88769287, 0.00028243125, 0.8027765, 0.41960785)
 
