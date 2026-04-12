@@ -48,7 +48,6 @@ func _physics_process(delta: float) -> void:
 	#position = position.clamp(Vector2.ZERO, screen_size)
 
 
-func _on_fan_collision_body_entered(body: Node2D) -> void:
+func _on_smoke_hitbox_body_entered(body: Node2D) -> void:	
 	if body.is_in_group("Smoke"):
-		body.fan_direction += Vector2(0.0, -1.0)
-		
+		print("Smoke hit, you lose!")

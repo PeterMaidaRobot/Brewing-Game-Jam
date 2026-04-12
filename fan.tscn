@@ -11,8 +11,6 @@ collision_mask = 2
 script = ExtResource("1_8vgsl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386766809]
-light_mask = 2
-visibility_layer = 2
 position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_onrkg")
 debug_color = Color(0.86423004, 0.0006081802, 0.86643076, 0.41960785)

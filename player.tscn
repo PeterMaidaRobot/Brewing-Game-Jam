@@ -18,6 +18,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
 size = Vector2(58, 58)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(57, 56)
+
 [node name="Player" type="CharacterBody2D" unique_id=1573098926]
 script = ExtResource("1_onrkg")
 metadata/_edit_group_ = true
@@ -32,3 +35,15 @@ shape = SubResource("RectangleShape2D_sh265")
 
 [node name="Fan" parent="." unique_id=1725732873 instance=ExtResource("3_i3pqv")]
 position = Vector2(0, -57)
+
+[node name="SmokeHitbox" type="Area2D" parent="." unique_id=346136574]
+scale = Vector2(0.99670535, 1)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SmokeHitbox" unique_id=1127072397]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_i3pqv")
+debug_color = Color(0.88769287, 0.00028243125, 0.8027765, 0.41960785)
+
+[connection signal="body_entered" from="SmokeHitbox" to="." method="_on_smoke_hitbox_body_entered"]

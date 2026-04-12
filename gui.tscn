@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c74ju7qn5hur3"]
+
+[ext_resource type="Script" uid="uid://e33tmj6a45ya" path="res://gui.gd" id="1_80edf"]
+
+[node name="GUI" type="CanvasLayer" unique_id=194733547]
+script = ExtResource("1_80edf")
+
+[node name="WinLabel" type="Label" parent="." unique_id=1912110054]
+offset_left = 553.0
+offset_top = 267.0
+offset_right = 621.0
+offset_bottom = 290.0
+text = "You Win!"
+
+[node name="LoseLabel" type="Label" parent="." unique_id=624259505]
+offset_left = 557.0
+offset_top = 295.0
+offset_right = 627.0
+offset_bottom = 318.0
+text = "You lose!"
