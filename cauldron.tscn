@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dsiq3lr1rgl53"]
+
+[ext_resource type="Script" uid="uid://bjklxbp5ratcu" path="res://cauldron.gd" id="1_0t22i"]
+[ext_resource type="Texture2D" uid="uid://gxdwsvw204w8" path="res://art/cauldron.jpg" id="1_5qdwy"]
+[ext_resource type="PackedScene" uid="uid://c5cvitjvqa1u0" path="res://smoke.tscn" id="2_q3ljf"]
+
+[sub_resource type="Curve2D" id="Curve2D_7dadi"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -10, 0, 0, 0, 0, 5, -10, 0, 0, 0, 0, 12, -8, 0, 0, 0, 0, 5, -6, 0, 0, 0, 0, -2, -6, 0, 0, 0, 0, -10, -6, 0, 0, 0, 0, -14, -8, 0, 0, 0, 0, -8, -10, 0, 0, 0, 0, 0, -10)
+}
+point_count = 9
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0t22i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5qdwy")
+}],
+"loop": true,
+"name": &"bubbling",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3ljf"]
+size = Vector2(42, 46)
+
+[node name="Cauldron" type="StaticBody2D" unique_id=1046902203]
+script = ExtResource("1_0t22i")
+smoke_scene = ExtResource("2_q3ljf")
+metadata/_edit_group_ = true
+
+[node name="SmokePath" type="Path2D" parent="." unique_id=1164047902]
+curve = SubResource("Curve2D_7dadi")
+
+[node name="SmokeSpawnLocation" type="PathFollow2D" parent="SmokePath" unique_id=193847215]
+position = Vector2(0, -10)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=557946684]
+position = Vector2(-1.9073486e-06, -1.9073486e-06)
+scale = Vector2(0.046655517, 0.046655517)
+sprite_frames = SubResource("SpriteFrames_0t22i")
+animation = &"bubbling"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=152567572]
+shape = SubResource("RectangleShape2D_q3ljf")
+
+[node name="SmokeTimer" type="Timer" parent="." unique_id=58284568]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="SmokeTimer" to="." method="_on_smoke_timer_timeout"]

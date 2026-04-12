@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bv4qqayneihhw"]
+
+[ext_resource type="Script" uid="uid://dk3fb4wds6wtx" path="res://fan.gd" id="1_8vgsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(41, 165)
+
+[node name="Fan" type="Area2D" unique_id=1725732873]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8vgsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386766809]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_onrkg")
+debug_color = Color(0.86423004, 0.0006081802, 0.86643076, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
