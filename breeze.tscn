@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://uoxhc115f880"]
+
+[ext_resource type="Script" uid="uid://xsegrg4gfn43" path="res://breeze.gd" id="1_um7kn"]
+[ext_resource type="Texture2D" uid="uid://c2vx54aplsni" path="res://art/breeze.png" id="2_4mnct"]
+[ext_resource type="Shader" uid="uid://dp6tgymt2m7q1" path="res://scroll.gdshader" id="2_dlrsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
+size = Vector2(41, 165)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6flf"]
+shader = ExtResource("2_dlrsi")
+
+[node name="Breeze" type="Area2D" unique_id=1725732873]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_um7kn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386766809]
+shape = SubResource("RectangleShape2D_onrkg")
+debug_color = Color(0.86423004, 0.0006081802, 0.86643076, 0.41960785)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1454389150]
+material = SubResource("ShaderMaterial_c6flf")
+offset_left = -20.0
+offset_top = -83.0
+offset_right = 20.0
+offset_bottom = 82.0
+texture = ExtResource("2_4mnct")
+expand_mode = 4
+stretch_mode = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

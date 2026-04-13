@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dfo7r770s3ix8" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dqro0amu2p0ir" path="res://art/player.png" id="2_i3pqv"]
-[ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://fan.tscn" id="3_i3pqv"]
+[ext_resource type="PackedScene" uid="uid://uoxhc115f880" path="res://breeze.tscn" id="3_hqtel"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -35,8 +35,8 @@ animation = &"stand"
 position = Vector2(-1.5, -5)
 shape = SubResource("RectangleShape2D_sh265")
 
-[node name="Fan" parent="." unique_id=1725732873 instance=ExtResource("3_i3pqv")]
-position = Vector2(-1, -69)
+[node name="Breeze" parent="." unique_id=1725732873 instance=ExtResource("3_hqtel")]
+position = Vector2(-1, -109.5)
 scale = Vector2(0.640001, 1)
 
 [node name="SmokeHitbox" type="Area2D" parent="." unique_id=346136574]

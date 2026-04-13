@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://log.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://witch.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://c74ju7qn5hur3" path="res://gui.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://fan.tscn" id="6_5vw27"]
 
 [node name="Main" type="Node" unique_id=1821337530]
 script = ExtResource("1_7mycd")
@@ -84,6 +85,10 @@ position = Vector2(565, 614)
 
 [node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("5_272bh")]
 position = Vector2(760, 332)
+
+[node name="Fan" parent="." unique_id=1725732873 instance=ExtResource("6_5vw27")]
+position = Vector2(827.99994, 505)
+scale = Vector2(1.233, 1.234)
 
 [node name="Cauldron" parent="." unique_id=668525729 instance=ExtResource("2_0xm2m")]
 position = Vector2(732, 352)

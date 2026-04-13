@@ -1,20 +1,48 @@
 [gd_scene format=3 uid="uid://bv4qqayneihhw"]
 
 [ext_resource type="Script" uid="uid://dk3fb4wds6wtx" path="res://fan.gd" id="1_8vgsl"]
+[ext_resource type="Texture2D" uid="uid://ccumv1cvheylj" path="res://art/fan_off.png" id="2_3ml7w"]
+[ext_resource type="Texture2D" uid="uid://he6eormtribf" path="res://art/fan_on.png" id="3_tc01m"]
+[ext_resource type="PackedScene" uid="uid://uoxhc115f880" path="res://breeze.tscn" id="4_tc01m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(41, 165)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qoasc"]
+size = Vector2(30, 22)
 
-[node name="Fan" type="Area2D" unique_id=1725732873]
-collision_layer = 0
-collision_mask = 2
+[sub_resource type="SpriteFrames" id="SpriteFrames_qoasc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3ml7w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5n3l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_tc01m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Fan" type="StaticBody2D" unique_id=151114730]
 script = ExtResource("1_8vgsl")
 metadata/_edit_group_ = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386766809]
-position = Vector2(0.5, 2)
-shape = SubResource("RectangleShape2D_onrkg")
-debug_color = Color(0.86423004, 0.0006081802, 0.86643076, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1606405416]
+position = Vector2(-1, 5)
+shape = SubResource("RectangleShape2D_qoasc")
 
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[node name="FanOffSprite" type="AnimatedSprite2D" parent="." unique_id=1726219593]
+sprite_frames = SubResource("SpriteFrames_qoasc")
+
+[node name="FanOnSprite" type="AnimatedSprite2D" parent="." unique_id=175645911]
+sprite_frames = SubResource("SpriteFrames_v5n3l")
+
+[node name="Breeze" parent="." unique_id=344945332 instance=ExtResource("4_tc01m")]
+position = Vector2(0, -88)
