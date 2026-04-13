@@ -11,6 +11,14 @@ func _process(delta: float) -> void:
 	pass
 
 
+func set_enabled(on : bool) -> void:
+	$CollisionShape2D.disabled = !on
+	if on:
+		$TextureRect.show()
+	else:
+		$TextureRect.hide()
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Smoke"):
 		body.fan_direction += Vector2(0.0, -1.0)

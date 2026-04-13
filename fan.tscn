@@ -30,6 +30,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tc01m"]
+size = Vector2(44, 33)
+
 [node name="Fan" type="StaticBody2D" unique_id=151114730]
 script = ExtResource("1_8vgsl")
 metadata/_edit_group_ = true
@@ -39,6 +42,7 @@ position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_qoasc")
 
 [node name="FanOffSprite" type="AnimatedSprite2D" parent="." unique_id=1726219593]
+visible = false
 sprite_frames = SubResource("SpriteFrames_qoasc")
 
 [node name="FanOnSprite" type="AnimatedSprite2D" parent="." unique_id=175645911]
@@ -46,3 +50,23 @@ sprite_frames = SubResource("SpriteFrames_v5n3l")
 
 [node name="Breeze" parent="." unique_id=344945332 instance=ExtResource("4_tc01m")]
 position = Vector2(0, -88)
+
+[node name="InteractText" type="Label" parent="." unique_id=1734402393]
+visible = false
+offset_left = -31.0
+offset_top = 16.0
+offset_right = 31.0
+offset_bottom = 39.0
+theme_override_font_sizes/font_size = 8
+text = "Interact"
+horizontal_alignment = 1
+
+[node name="InteractTrigger" type="Area2D" parent="." unique_id=288309403]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractTrigger" unique_id=1232149650]
+position = Vector2(-1, 5.5)
+shape = SubResource("RectangleShape2D_tc01m")
+debug_color = Color(0.86460453, 0.35770705, 0, 0.41960785)
+
+[connection signal="body_entered" from="InteractTrigger" to="." method="_on_interact_trigger_body_entered"]
+[connection signal="body_exited" from="InteractTrigger" to="." method="_on_interact_trigger_body_exited"]

@@ -87,7 +87,7 @@ position = Vector2(565, 614)
 position = Vector2(760, 332)
 
 [node name="Fan" parent="." unique_id=1725732873 instance=ExtResource("6_5vw27")]
-position = Vector2(827.99994, 505)
+position = Vector2(684, 491)
 scale = Vector2(1.233, 1.234)
 
 [node name="Cauldron" parent="." unique_id=668525729 instance=ExtResource("2_0xm2m")]
