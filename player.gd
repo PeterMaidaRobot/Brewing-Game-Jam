@@ -1,3 +1,4 @@
+class_name Player
 extends CharacterBody2D
 
 
@@ -32,26 +33,11 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#var velocity = Vector2.ZERO
-	#if Input.is_action_pressed("move_right"):
-		#velocity.x += 1
-	#if Input.is_action_pressed("move_left"):
-		#velocity.x -= 1
-	#if Input.is_action_pressed("move_down"):
-		#velocity.y += 1
-	#if Input.is_action_pressed("move_up"):
-		#velocity.y -= 1
-		#
-	#if velocity.length() > 0:
-		#velocity = velocity.normalized() * speed
-#
-	#position += velocity * delta
-	#position = position.clamp(Vector2.ZERO, screen_size)
-
 
 func _on_smoke_hitbox_body_entered(body: Node2D) -> void:	
-	if body.is_in_group("Smoke"):
-		print("Smoke hit, you lose!")
-		lose_game.emit()
+	if body is Smoke:
+		# Only allow the stronger smoke to kill you to be more forgiving on loss
+		var smoke : Smoke = body as Smoke
+		if smoke.strength > 100:
+			print("Smoke hit, you lose! SmokeStrength:" + str(body.strength))
+			lose_game.emit()

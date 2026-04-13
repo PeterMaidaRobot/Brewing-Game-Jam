@@ -20,9 +20,11 @@ func set_enabled(on : bool) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Smoke"):
-		body.fan_direction += Vector2(0.0, -1.0)
-
+	if body is Smoke:
+		var smoke : Smoke = body as Smoke
+		smoke.fan_direction += Vector2(0.0, -1.0)
+		
 func _on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Smoke"):
-		body.fan_direction += Vector2(0.0, +1.0)
+	if body is Smoke:
+		var smoke : Smoke = body as Smoke
+		smoke.fan_direction += Vector2(0.0, +1.0)

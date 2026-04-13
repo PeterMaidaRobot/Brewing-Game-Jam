@@ -90,6 +90,11 @@ position = Vector2(760, 332)
 position = Vector2(684, 491)
 scale = Vector2(1.233, 1.234)
 
+[node name="Fan2" parent="." unique_id=151114730 instance=ExtResource("6_5vw27")]
+position = Vector2(908, 575)
+scale = Vector2(1.233, 1.234)
+fan_on = true
+
 [node name="Cauldron" parent="." unique_id=668525729 instance=ExtResource("2_0xm2m")]
 position = Vector2(732, 352)
 

@@ -35,12 +35,12 @@ func turn_off() -> void:
 
 
 func _on_interact_trigger_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body is Player:
 		player_in_range = true
 		$InteractText.show()
 
 
 func _on_interact_trigger_body_exited(body: Node2D) -> void:
-	if body.name == "Player":
+	if body is Player:
 		player_in_range = false
 		$InteractText.hide()

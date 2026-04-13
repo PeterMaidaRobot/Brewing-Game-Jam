@@ -48,9 +48,9 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_a7jlv")
 
 [node name="SmokeTimer" type="Timer" parent="." unique_id=58284568]
-wait_time = 0.5
+wait_time = 0.1
 autostart = true
 
-[node name="SmokeSpawnLocation2" type="Marker2D" parent="." unique_id=54031495]
+[node name="SmokeSpawnLocation" type="Marker2D" parent="." unique_id=54031495]
 
 [connection signal="timeout" from="SmokeTimer" to="." method="_on_smoke_timer_timeout"]

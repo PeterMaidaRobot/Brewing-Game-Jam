@@ -12,40 +12,42 @@ func _process(delta: float) -> void:
 	pass
 
 
-func create_initial_smoke_cloud() -> void:
+# Create a circle around the cauldron with
+# a distinct range away, given some variation further away
+# the desired number of smoke particles in the ring
+func create_smoke_ring(range : float, count : int, variation : float) -> void:
+	for i in range(count):
 	
-	for i in range(100):
-	
-		# Create a new instance of the Mob Scene
+		# Create a new instance of the Smoke Scene
 		var smoke = smoke_scene.instantiate()
 		
-		# Continue the circle along the Path2D at an interval, it will reset to zero once it goes over 1
-		var smoke_spawn_location = $SmokePath/SmokeSpawnLocation
-		smoke_spawn_location.progress_ratio = smoke_spawn_location.progress_ratio + 0.01
+		# Grab the static point location to spawn from
+		var smoke_spawn_location = $SmokeSpawnLocation
 		
-		# Set the mob's position to the location
-		smoke.position = smoke_spawn_location.position
+		# Set the smoke's direction prependicular to the path direction.
+		var direction = smoke_spawn_location.rotation
+		# Rotate the point so it will cover the full 360 degrees
+		smoke_spawn_location.rotation += (2 * PI / count)
 		
-		# Set the mob's direction prependicular to the path direction.
-		var direction = smoke_spawn_location.rotation #- (PI / 2)
-		#smoke_spawn_location.rotation += 0.06
-		
-		var layer = randf_range(1.0, 100.0)
+		# Create the ring at the desired range away, giving some randomness variation
+		var layer = range + randf_range(0.0, variation)
 		smoke.position = smoke_spawn_location.position + Vector2(layer, layer).rotated(direction)
 		
 		# Add some randomness to the direction.
-		#direction += randf_range(-PI / 4, PI / 4)
+		direction += randf_range(-PI / 4, PI / 4)
 		smoke.rotation = direction
 		
 		# Choose the velocity for the mob.
-		var velocity = Vector2(randf_range(10.0, 20.0), 0.0)
+		var velocity = Vector2(5.0, 20.0)
 		smoke.linear_velocity = velocity.rotated(direction)
 		
-		# Spawn the mob by adding it to the Main scene.
+		# Spawn the smoke by adding it to the Main scene.
 		add_child(smoke)
-		#print(smoke_spawn_location.progress_ratio)
-		#print(smoke.position)
-		#print(smoke.rotation)
+
+func create_initial_smoke_cloud() -> void:
+	create_smoke_ring(100, 50, 0)
+	create_smoke_ring(50, 50, 20)
+	create_smoke_ring(10, 5, 10)
 	
 	
 	
