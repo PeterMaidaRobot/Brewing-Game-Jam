@@ -3,7 +3,6 @@ class_name Level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
 	var gui_scene = load("res://scenes/gui.tscn")
 	if gui_scene != null:
 		var gui_instance = gui_scene.instantiate()
@@ -11,7 +10,6 @@ func _ready() -> void:
 	else:
 		push_error("Failed to load GUI Scene")
 	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

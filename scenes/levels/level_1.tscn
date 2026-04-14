@@ -78,7 +78,7 @@ position = Vector2(478, 586)
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_s8va5")]
 position = Vector2(569.00006, 29)
 scale = Vector2(5.8819265, 2.8393373)
-next_level_path = "res://scenes/levels/level_2.tscn"
+next_level_num = 2
 
 [node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_dga24")]
 position = Vector2(565, 614)

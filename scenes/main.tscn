@@ -13,6 +13,7 @@
 script = ExtResource("1_7mycd")
 
 [node name="Background" type="ColorRect" parent="." unique_id=943120867]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -77,28 +78,35 @@ position = Vector2(478, 466)
 position = Vector2(478, 586)
 
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("1_1bvp3")]
+visible = false
 position = Vector2(569.00006, 29)
 scale = Vector2(5.8819265, 2.8393373)
 
 [node name="Player" parent="." unique_id=731321046 instance=ExtResource("1_ig7tw")]
+visible = false
 position = Vector2(565, 614)
 
 [node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("5_272bh")]
+visible = false
 position = Vector2(760, 332)
 
 [node name="Fan" parent="." unique_id=1725732873 instance=ExtResource("6_5vw27")]
+visible = false
 position = Vector2(684, 491)
 scale = Vector2(1.233, 1.234)
 
 [node name="Fan2" parent="." unique_id=151114730 instance=ExtResource("6_5vw27")]
+visible = false
 position = Vector2(908, 575)
 scale = Vector2(1.233, 1.234)
 fan_on = true
 
 [node name="Cauldron" parent="." unique_id=668525729 instance=ExtResource("2_0xm2m")]
+visible = false
 position = Vector2(732, 352)
 
 [node name="GUI" parent="." unique_id=194733547 instance=ExtResource("5_lquwl")]
+visible = false
 
 [connection signal="win_game" from="Goal" to="." method="_on_goal_win_game"]
 [connection signal="lose_game" from="Player" to="." method="_on_player_lose_game"]
