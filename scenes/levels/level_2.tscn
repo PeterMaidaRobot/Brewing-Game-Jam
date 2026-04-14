@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://50xx7uakn5r3"]
+
+[ext_resource type="Script" uid="uid://481gwrunmrln" path="res://scenes/levels/level_2.gd" id="1_8qukl"]
+[ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_ibugp"]
+[ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_8qukl"]
+[ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_3p04p"]
+[ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_qsp8v"]
+[ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_nt80m"]
+[ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_brxtv"]
+
+[node name="Level2" type="Node" unique_id=1898624200]
+script = ExtResource("1_8qukl")
+
+[node name="Background" type="ColorRect" parent="." unique_id=937023672]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45314705, 0.48958445, 0.3594718, 1)
+
+[node name="Logs" type="Node" parent="." unique_id=950533807]
+
+[node name="Log" parent="Logs" unique_id=1126208388 instance=ExtResource("1_ibugp")]
+position = Vector2(478, 344)
+
+[node name="Log4" parent="Logs" unique_id=1092643682 instance=ExtResource("1_ibugp")]
+position = Vector2(478, 224)
+
+[node name="Log5" parent="Logs" unique_id=273279388 instance=ExtResource("1_ibugp")]
+position = Vector2(478, 107)
+
+[node name="Log6" parent="Logs" unique_id=649197478 instance=ExtResource("1_ibugp")]
+position = Vector2(478, -10)
+
+[node name="Log7" parent="Logs" unique_id=276326016 instance=ExtResource("1_ibugp")]
+position = Vector2(658, -10)
+
+[node name="Log8" parent="Logs" unique_id=1508674543 instance=ExtResource("1_ibugp")]
+position = Vector2(658, 112)
+
+[node name="Log9" parent="Logs" unique_id=1947646529 instance=ExtResource("1_ibugp")]
+position = Vector2(658, 234)
+
+[node name="Log10" parent="Logs" unique_id=421781694 instance=ExtResource("1_ibugp")]
+position = Vector2(656, 354)
+
+[node name="Log11" parent="Logs" unique_id=111843405 instance=ExtResource("1_ibugp")]
+position = Vector2(776, 234)
+
+[node name="Log16" parent="Logs" unique_id=1370960462 instance=ExtResource("1_ibugp")]
+position = Vector2(718, 234)
+
+[node name="Log12" parent="Logs" unique_id=362125425 instance=ExtResource("1_ibugp")]
+position = Vector2(833, 234)
+
+[node name="Log13" parent="Logs" unique_id=326791599 instance=ExtResource("1_ibugp")]
+position = Vector2(891, 235)
+
+[node name="Log14" parent="Logs" unique_id=97368429 instance=ExtResource("1_ibugp")]
+position = Vector2(948, 235)
+
+[node name="Log15" parent="Logs" unique_id=829305076 instance=ExtResource("1_ibugp")]
+position = Vector2(1003, 235)
+
+[node name="Log17" parent="Logs" unique_id=1961869479 instance=ExtResource("1_ibugp")]
+position = Vector2(1058, 235)
+
+[node name="Log18" parent="Logs" unique_id=723087918 instance=ExtResource("1_ibugp")]
+position = Vector2(1118, 235)
+
+[node name="Log2" parent="Logs" unique_id=1523705002 instance=ExtResource("1_ibugp")]
+position = Vector2(478, 466)
+
+[node name="Log3" parent="Logs" unique_id=669135959 instance=ExtResource("1_ibugp")]
+position = Vector2(478, 586)
+
+[node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_8qukl")]
+position = Vector2(569.00006, 29)
+scale = Vector2(5.8819265, 2.8393373)
+
+[node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_3p04p")]
+position = Vector2(565, 614)
+
+[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_qsp8v")]
+position = Vector2(367.99994, 473)
+
+[node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_nt80m")]
+position = Vector2(325, 407.99997)
+scale = Vector2(1.233, 1.234)
+
+[node name="Fan2" parent="." unique_id=332748582 instance=ExtResource("5_nt80m")]
+position = Vector2(421, 413)
+scale = Vector2(1.233, 1.234)
+fan_on = true
+
+[node name="Cauldron" parent="." unique_id=1046902203 instance=ExtResource("6_brxtv")]
+position = Vector2(368, 293)
+
+[connection signal="win_game" from="Goal" to="." method="_on_goal_win_game"]
+[connection signal="lose_game" from="Player" to="." method="_on_player_lose_game"]

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bv4qqayneihhw"]
 
-[ext_resource type="Script" uid="uid://dk3fb4wds6wtx" path="res://fan.gd" id="1_8vgsl"]
+[ext_resource type="Script" uid="uid://dk3fb4wds6wtx" path="res://scripts/fan.gd" id="1_8vgsl"]
 [ext_resource type="Texture2D" uid="uid://ccumv1cvheylj" path="res://art/fan_off.png" id="2_3ml7w"]
 [ext_resource type="Texture2D" uid="uid://he6eormtribf" path="res://art/fan_on.png" id="3_tc01m"]
-[ext_resource type="PackedScene" uid="uid://uoxhc115f880" path="res://breeze.tscn" id="4_tc01m"]
+[ext_resource type="PackedScene" uid="uid://uoxhc115f880" path="res://scenes/breeze.tscn" id="4_tc01m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qoasc"]
 size = Vector2(30, 22)

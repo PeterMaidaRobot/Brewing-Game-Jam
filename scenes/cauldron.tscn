@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dsiq3lr1rgl53"]
 
-[ext_resource type="Script" uid="uid://bjklxbp5ratcu" path="res://cauldron.gd" id="1_0t22i"]
-[ext_resource type="PackedScene" uid="uid://c5cvitjvqa1u0" path="res://smoke.tscn" id="2_q3ljf"]
+[ext_resource type="Script" uid="uid://bjklxbp5ratcu" path="res://scripts/cauldron.gd" id="1_0t22i"]
+[ext_resource type="PackedScene" uid="uid://c5cvitjvqa1u0" path="res://scenes/smoke.tscn" id="2_q3ljf"]
 [ext_resource type="Texture2D" uid="uid://cdghnlypa5fjg" path="res://art/cauldron.png" id="3_q3ljf"]
 
 [sub_resource type="Curve2D" id="Curve2D_7dadi"]

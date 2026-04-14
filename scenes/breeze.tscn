@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://uoxhc115f880"]
 
-[ext_resource type="Script" uid="uid://xsegrg4gfn43" path="res://breeze.gd" id="1_um7kn"]
+[ext_resource type="Script" uid="uid://xsegrg4gfn43" path="res://scripts/breeze.gd" id="1_um7kn"]
 [ext_resource type="Texture2D" uid="uid://c2vx54aplsni" path="res://art/breeze.png" id="2_4mnct"]
 [ext_resource type="Shader" uid="uid://dp6tgymt2m7q1" path="res://scroll.gdshader" id="2_dlrsi"]
 

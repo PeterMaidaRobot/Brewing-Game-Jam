@@ -39,5 +39,5 @@ func _on_smoke_hitbox_body_entered(body: Node2D) -> void:
 		# Only allow the stronger smoke to kill you to be more forgiving on loss
 		var smoke : Smoke = body as Smoke
 		if smoke.strength > 100:
-			print("Smoke hit, you lose! SmokeStrength:" + str(body.strength))
+			#print("Smoke hit, you lose! SmokeStrength:" + str(body.strength))
 			lose_game.emit()
