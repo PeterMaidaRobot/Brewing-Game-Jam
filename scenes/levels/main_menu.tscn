@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cgyxwddg7j6rc"]
 
 [ext_resource type="Script" uid="uid://cjt80c570klo7" path="res://scenes/levels/main_menu.gd" id="1_fsby3"]
+[ext_resource type="Texture2D" uid="uid://ldqph2c5xwxw" path="res://art/main_menu.png" id="2_leamy"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=572550495]
 script = ExtResource("1_fsby3")
@@ -13,14 +14,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="MenuScreen" unique_id=1309205495]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.27058825, 0, 0.42745098, 1)
+[node name="Background" type="Sprite2D" parent="MenuScreen" unique_id=1953041950]
+position = Vector2(576, 324)
+texture = ExtResource("2_leamy")
 
 [node name="NewGameButton" type="Button" parent="MenuScreen" unique_id=531183831]
 layout_mode = 1

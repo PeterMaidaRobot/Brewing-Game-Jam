@@ -39,7 +39,6 @@ progress = 5.656854
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=557946684]
 position = Vector2(-1.9073486e-06, -1.9073486e-06)
-scale = Vector2(0.987, 0.987)
 sprite_frames = SubResource("SpriteFrames_0t22i")
 animation = &"bubbling"
 

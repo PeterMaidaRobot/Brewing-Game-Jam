@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dp6pvqmq10wng"]
 
 [ext_resource type="Script" uid="uid://4el7whl1apg8" path="res://scenes/levels/cutscene.gd" id="1_ueq62"]
+[ext_resource type="Texture2D" uid="uid://c4bkn80d6gya4" path="res://art/cutscene/cutscene.png" id="2_d65mg"]
 
 [node name="Cutscene" type="CanvasLayer" unique_id=3954383]
 script = ExtResource("1_ueq62")
@@ -13,23 +14,22 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5019608, 0.7607843, 0.80784315, 1)
 
-[node name="Label" type="Label" parent="." unique_id=268705039]
-offset_left = 436.0
-offset_top = 219.0
-offset_right = 476.0
-offset_bottom = 242.0
-text = "This is the intro cutscene placeholder"
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1007854266]
+position = Vector2(576, 324)
+texture = ExtResource("2_d65mg")
 
-[node name="Label2" type="Label" parent="." unique_id=1913046928]
-offset_left = 498.0
-offset_top = 436.0
-offset_right = 681.0
-offset_bottom = 459.0
+[node name="ContinueLabel" type="Label" parent="." unique_id=1913046928]
+offset_left = 943.0
+offset_top = 606.0
+offset_right = 1126.0
+offset_bottom = 629.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press space to continue"
 
-[node name="Label3" type="Label" parent="." unique_id=676188685]
-offset_left = 511.0
-offset_top = 478.0
-offset_right = 668.0
-offset_bottom = 501.0
-text = "Press space to begin"
+[node name="SpaceLabel" type="Label" parent="." unique_id=676188685]
+offset_left = 963.0
+offset_top = 575.0
+offset_right = 1120.0
+offset_bottom = 598.0
+theme_override_colors/font_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
+text = "SPACE"

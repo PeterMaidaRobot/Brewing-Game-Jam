@@ -1,31 +1,16 @@
 [gd_scene format=3 uid="uid://dugi43jh0bihq"]
 
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_px1bc"]
-[ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_s3mk5"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_jn05g"]
-[ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_52an8"]
+[ext_resource type="Texture2D" uid="uid://bi5n3t5qi4eb8" path="res://art/finale.png" id="5_5faj0"]
 
 [node name="Finale" type="Node" unique_id=1227287629]
 
-[node name="Background" type="ColorRect" parent="." unique_id=1423555614]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.45314705, 0.48958445, 0.3594718, 1)
-metadata/_edit_use_anchors_ = true
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1219579802]
+position = Vector2(576, 324)
+texture = ExtResource("5_5faj0")
 
 [node name="Logs" type="Node" parent="." unique_id=555660002]
-
-[node name="Log" parent="Logs" unique_id=1126208388 instance=ExtResource("1_px1bc")]
-position = Vector2(478, 344)
-
-[node name="Log4" parent="Logs" unique_id=472829327 instance=ExtResource("1_px1bc")]
-position = Vector2(478, 224)
-
-[node name="Log5" parent="Logs" unique_id=1835688536 instance=ExtResource("1_px1bc")]
-position = Vector2(478, 107)
 
 [node name="Log6" parent="Logs" unique_id=73074057 instance=ExtResource("1_px1bc")]
 position = Vector2(478, -10)
@@ -33,52 +18,8 @@ position = Vector2(478, -10)
 [node name="Log7" parent="Logs" unique_id=1390148376 instance=ExtResource("1_px1bc")]
 position = Vector2(658, -10)
 
-[node name="Log8" parent="Logs" unique_id=472713907 instance=ExtResource("1_px1bc")]
-position = Vector2(658, 112)
-
-[node name="Log9" parent="Logs" unique_id=174528876 instance=ExtResource("1_px1bc")]
-position = Vector2(658, 234)
-
-[node name="Log10" parent="Logs" unique_id=817937494 instance=ExtResource("1_px1bc")]
-position = Vector2(656, 354)
-
-[node name="Log11" parent="Logs" unique_id=1471246028 instance=ExtResource("1_px1bc")]
-position = Vector2(776, 234)
-
-[node name="Log16" parent="Logs" unique_id=597743903 instance=ExtResource("1_px1bc")]
-position = Vector2(718, 234)
-
-[node name="Log12" parent="Logs" unique_id=270239564 instance=ExtResource("1_px1bc")]
-position = Vector2(833, 234)
-
-[node name="Log13" parent="Logs" unique_id=314534203 instance=ExtResource("1_px1bc")]
-position = Vector2(891, 235)
-
 [node name="Log14" parent="Logs" unique_id=1121501817 instance=ExtResource("1_px1bc")]
 position = Vector2(948, 235)
 
-[node name="Log15" parent="Logs" unique_id=1106252881 instance=ExtResource("1_px1bc")]
-position = Vector2(1003, 235)
-
-[node name="Log17" parent="Logs" unique_id=928272355 instance=ExtResource("1_px1bc")]
-position = Vector2(1058, 235)
-
-[node name="Log18" parent="Logs" unique_id=558748084 instance=ExtResource("1_px1bc")]
-position = Vector2(1118, 235)
-
-[node name="Log2" parent="Logs" unique_id=53930880 instance=ExtResource("1_px1bc")]
-position = Vector2(478, 466)
-
-[node name="Log3" parent="Logs" unique_id=1780775608 instance=ExtResource("1_px1bc")]
-position = Vector2(478, 586)
-
-[node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_s3mk5")]
-position = Vector2(569.00006, 29)
-scale = Vector2(5.8819265, 2.8393373)
-next_level_num = -1
-
 [node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_jn05g")]
 position = Vector2(565, 614)
-
-[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_52an8")]
-position = Vector2(760, 332)
