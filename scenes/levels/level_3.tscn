@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://40pwudu3t1m3"]
+
+[ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_ftfob"]
+[ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_fkk1g"]
+[ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_pimnq"]
+[ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_2bnyt"]
+[ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_n6eey"]
+
+[node name="Level3" type="Node" unique_id=1321300633]
+
+[node name="Background" type="ColorRect" parent="." unique_id=308053666]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45314705, 0.48958445, 0.3594718, 1)
+
+[node name="Logs" type="Node" parent="." unique_id=795111191]
+
+[node name="Log5" parent="Logs" unique_id=1126208388 instance=ExtResource("1_ftfob")]
+position = Vector2(478, 107)
+
+[node name="Log6" parent="Logs" unique_id=1213054909 instance=ExtResource("1_ftfob")]
+position = Vector2(478, -10)
+
+[node name="Log7" parent="Logs" unique_id=1797953117 instance=ExtResource("1_ftfob")]
+position = Vector2(658, -10)
+
+[node name="Log8" parent="Logs" unique_id=1590256503 instance=ExtResource("1_ftfob")]
+position = Vector2(658, 112)
+
+[node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_fkk1g")]
+position = Vector2(569, 30)
+scale = Vector2(5.8819265, 2.8393373)
+next_level_num = 99
+
+[node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_ugcn1")]
+position = Vector2(565, 614)
+
+[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_pimnq")]
+position = Vector2(738, 259)
+
+[node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_2bnyt")]
+position = Vector2(818, 365)
+rotation = 4.712389
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(-1, 0)
+
+[node name="Fan2" parent="." unique_id=2029827020 instance=ExtResource("5_2bnyt")]
+position = Vector2(775, 489)
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
+
+[node name="Fan3" parent="." unique_id=112318442 instance=ExtResource("5_2bnyt")]
+position = Vector2(674, 412)
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
+
+[node name="Cauldron2" parent="." unique_id=301970594 instance=ExtResource("6_n6eey")]
+position = Vector2(729, 311)

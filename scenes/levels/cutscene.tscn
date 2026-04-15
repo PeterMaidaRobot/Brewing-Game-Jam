@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dp6pvqmq10wng"]
 
-[ext_resource type="Script" uid="uid://4el7whl1apg8" path="res://scenes/levels/cutscene.gd" id="1_ueq62"]
+[ext_resource type="Script" uid="uid://4el7whl1apg8" path="res://scripts/levels/cutscene.gd" id="1_ueq62"]
 [ext_resource type="Texture2D" uid="uid://c4bkn80d6gya4" path="res://art/cutscene/cutscene.png" id="2_d65mg"]
+[ext_resource type="Texture2D" uid="uid://cmwbfjd8hhynu" path="res://art/cutscene_big_face.png" id="3_kgahh"]
 
 [node name="Cutscene" type="CanvasLayer" unique_id=3954383]
 script = ExtResource("1_ueq62")
@@ -14,9 +15,15 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.5019608, 0.7607843, 0.80784315, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1007854266]
+[node name="Panels" type="Node" parent="." unique_id=57306274]
+
+[node name="Cutscene" type="Sprite2D" parent="Panels" unique_id=1007854266]
 position = Vector2(576, 324)
 texture = ExtResource("2_d65mg")
+
+[node name="BigFacePanel" type="Sprite2D" parent="Panels" unique_id=477883483]
+position = Vector2(576, 324)
+texture = ExtResource("3_kgahh")
 
 [node name="ContinueLabel" type="Label" parent="." unique_id=1913046928]
 offset_left = 943.0

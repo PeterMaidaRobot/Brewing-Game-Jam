@@ -1,5 +1,7 @@
 extends Area2D
+class_name Breeze
 
+@export var breeze_direction : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,9 +24,9 @@ func set_enabled(on : bool) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body is Smoke:
 		var smoke : Smoke = body as Smoke
-		smoke.fan_direction += Vector2(0.0, -1.0)
+		smoke.fan_direction += breeze_direction
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body is Smoke:
 		var smoke : Smoke = body as Smoke
-		smoke.fan_direction += Vector2(0.0, +1.0)
+		smoke.fan_direction -= breeze_direction

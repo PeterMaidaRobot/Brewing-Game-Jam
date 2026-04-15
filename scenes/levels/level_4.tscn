@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dmnkgb0sy820t"]
+
+[ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_rej77"]
+[ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_5vn0v"]
+[ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_ts8eg"]
+[ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_um320"]
+[ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_glw47"]
+[ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_4wsov"]
+
+[node name="Level4" type="Node" unique_id=1244656757]
+
+[node name="Background" type="ColorRect" parent="." unique_id=1048212525]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.45314705, 0.48958445, 0.3594718, 1)
+
+[node name="Logs" type="Node" parent="." unique_id=955531654]
+
+[node name="Log5" parent="Logs" unique_id=1126208388 instance=ExtResource("1_rej77")]
+position = Vector2(478, 107)
+
+[node name="Log9" parent="Logs" unique_id=783470483 instance=ExtResource("1_rej77")]
+position = Vector2(478, 228)
+
+[node name="Log10" parent="Logs" unique_id=1599442201 instance=ExtResource("1_rej77")]
+position = Vector2(308, 584)
+
+[node name="Log11" parent="Logs" unique_id=844425208 instance=ExtResource("1_rej77")]
+position = Vector2(430, 584)
+
+[node name="Log6" parent="Logs" unique_id=1337452315 instance=ExtResource("1_rej77")]
+position = Vector2(478, -10)
+
+[node name="Log7" parent="Logs" unique_id=688960248 instance=ExtResource("1_rej77")]
+position = Vector2(658, -10)
+
+[node name="Log12" parent="Logs" unique_id=35934001 instance=ExtResource("1_rej77")]
+position = Vector2(659, 110)
+
+[node name="Log13" parent="Logs" unique_id=548314197 instance=ExtResource("1_rej77")]
+position = Vector2(659, 229)
+
+[node name="Log14" parent="Logs" unique_id=1953530660 instance=ExtResource("1_rej77")]
+position = Vector2(660, 346)
+
+[node name="Log15" parent="Logs" unique_id=688423130 instance=ExtResource("1_rej77")]
+position = Vector2(662, 461)
+
+[node name="Log8" parent="Logs" unique_id=1241278564 instance=ExtResource("1_rej77")]
+position = Vector2(369, 585)
+
+[node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_5vn0v")]
+position = Vector2(569, 30)
+scale = Vector2(5.8819265, 2.8393373)
+next_level_num = 99
+
+[node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_ts8eg")]
+position = Vector2(182, 611)
+
+[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_um320")]
+position = Vector2(738, 259)
+
+[node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_glw47")]
+position = Vector2(433.99997, 406)
+rotation = 4.712389
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(-1, 0)
+
+[node name="Fan2" parent="." unique_id=203800043 instance=ExtResource("5_glw47")]
+position = Vector2(121, 353)
+rotation = 1.5707964
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(1, 0)
+
+[node name="Cauldron2" parent="." unique_id=1046902203 instance=ExtResource("6_4wsov")]
+position = Vector2(269, 301)
+
+[node name="Cauldron3" parent="." unique_id=1092185950 instance=ExtResource("6_4wsov")]
+position = Vector2(373, 303)

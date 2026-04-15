@@ -1,7 +1,9 @@
 extends StaticBody2D
+class_name Fan
 
 
-@export var fan_on = false
+@export var fan_on : bool = false
+@export var child_breeze_dir : Vector2
 
 var player_in_range : bool = false # TODO this needs to be assessed!!! might be inaccurate on boot-up, though interact text will not be shown, exit and re-enter.
 
@@ -11,6 +13,9 @@ func _ready() -> void:
 		turn_on()
 	else:
 		turn_off()
+	$Breeze.breeze_direction = child_breeze_dir
+	if child_breeze_dir == Vector2(0.0, 0.0):
+		print("Error, no breeze dir set!!")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

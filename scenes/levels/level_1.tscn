@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mjvdcl7erbjb"]
 
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_oc4kc"]
-[ext_resource type="Script" uid="uid://dfxfvmy3nw80k" path="res://scenes/levels/level_1.gd" id="1_s8va5"]
+[ext_resource type="Script" uid="uid://dfxfvmy3nw80k" path="res://scripts/levels/level_1.gd" id="1_s8va5"]
 [ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_s8va5"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_dga24"]
 [ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_qxy0u"]
@@ -89,11 +89,13 @@ position = Vector2(760, 332)
 [node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_excbq")]
 position = Vector2(684, 491)
 scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
 
 [node name="Fan2" parent="." unique_id=1114773305 instance=ExtResource("5_excbq")]
 position = Vector2(882, 582)
 scale = Vector2(1.233, 1.234)
 fan_on = true
+child_breeze_dir = Vector2(0, -1)
 
 [node name="Cauldron" parent="." unique_id=1046902203 instance=ExtResource("6_iav0o")]
 position = Vector2(732, 352)
