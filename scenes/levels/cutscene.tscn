@@ -1,8 +1,20 @@
 [gd_scene format=3 uid="uid://dp6pvqmq10wng"]
 
 [ext_resource type="Script" uid="uid://4el7whl1apg8" path="res://scripts/levels/cutscene.gd" id="1_ueq62"]
-[ext_resource type="Texture2D" uid="uid://c4bkn80d6gya4" path="res://art/cutscene/cutscene.png" id="2_d65mg"]
-[ext_resource type="Texture2D" uid="uid://cmwbfjd8hhynu" path="res://art/cutscene_big_face.png" id="3_kgahh"]
+[ext_resource type="Texture2D" uid="uid://dadpsl5hp4tty" path="res://art/cutscene/cutscene_panel_1_v1.png" id="2_1x56b"]
+[ext_resource type="Texture2D" uid="uid://co2av0rs50agl" path="res://art/cutscene/cutscene_panel_1_v2.png" id="3_8y0gp"]
+[ext_resource type="Texture2D" uid="uid://d3lliy5on5wyw" path="res://art/cutscene/cutscene_panel_1_v3.png" id="4_m0dxl"]
+[ext_resource type="Texture2D" uid="uid://wglrb52hm7vx" path="res://art/cutscene/cutscene_panel_2_v1.png" id="5_ygwtv"]
+[ext_resource type="Texture2D" uid="uid://bf2uqxw18ivh0" path="res://art/cutscene/cutscene_panel_2_v2.png" id="6_s3dqj"]
+[ext_resource type="Texture2D" uid="uid://s1o054drk6hv" path="res://art/cutscene/cutscene_panel_3.png" id="7_5iqgk"]
+[ext_resource type="Texture2D" uid="uid://dw5q8p7aok35a" path="res://art/cutscene/cutscene_panel_4_v1.png" id="8_gwfw6"]
+[ext_resource type="Texture2D" uid="uid://cycma0b8rfd0r" path="res://art/cutscene/cutscene_panel_4_v2.png" id="9_fpjl6"]
+[ext_resource type="Texture2D" uid="uid://h14ccdt1tysb" path="res://art/cutscene/cutscene_panel_5.png" id="10_b2p4w"]
+[ext_resource type="Texture2D" uid="uid://gpsyr323pmjh" path="res://art/cutscene/cutscene_panel_6.png" id="11_oahw8"]
+[ext_resource type="Texture2D" uid="uid://dmb7x4wgadxjs" path="res://art/cutscene/cutscene_panel_7.png" id="12_5edeb"]
+[ext_resource type="Texture2D" uid="uid://cr70iu514iuih" path="res://art/cutscene/cutscene_panel_8.png" id="13_u8lnu"]
+[ext_resource type="Texture2D" uid="uid://dh8rno41f52mk" path="res://art/cutscene/cutscene_panel_9.png" id="14_q42al"]
+[ext_resource type="Texture2D" uid="uid://dpetaxrsbnog5" path="res://art/cutscene/cutscene_big_face.png" id="15_q6gjd"]
 
 [node name="Cutscene" type="CanvasLayer" unique_id=3954383]
 script = ExtResource("1_ueq62")
@@ -17,13 +29,74 @@ color = Color(0.5019608, 0.7607843, 0.80784315, 1)
 
 [node name="Panels" type="Node" parent="." unique_id=57306274]
 
-[node name="Cutscene" type="Sprite2D" parent="Panels" unique_id=1007854266]
+[node name="Cutscene1" type="Sprite2D" parent="Panels" unique_id=1007854266]
 position = Vector2(576, 324)
-texture = ExtResource("2_d65mg")
+texture = ExtResource("2_1x56b")
+
+[node name="Cutscene2" type="Sprite2D" parent="Panels" unique_id=2002594282]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("3_8y0gp")
+
+[node name="Cutscene3" type="Sprite2D" parent="Panels" unique_id=837895399]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("4_m0dxl")
+
+[node name="Cutscene4" type="Sprite2D" parent="Panels" unique_id=1795130569]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("5_ygwtv")
+
+[node name="Cutscene5" type="Sprite2D" parent="Panels" unique_id=1031590078]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("6_s3dqj")
+
+[node name="Cutscene6" type="Sprite2D" parent="Panels" unique_id=1547807534]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("7_5iqgk")
+
+[node name="Cutscene7" type="Sprite2D" parent="Panels" unique_id=855812250]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("8_gwfw6")
+
+[node name="Cutscene8" type="Sprite2D" parent="Panels" unique_id=357087952]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("9_fpjl6")
+
+[node name="Cutscene9" type="Sprite2D" parent="Panels" unique_id=424342795]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("10_b2p4w")
+
+[node name="Cutscene10" type="Sprite2D" parent="Panels" unique_id=1460688780]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("11_oahw8")
+
+[node name="Cutscene11" type="Sprite2D" parent="Panels" unique_id=1928485761]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("12_5edeb")
+
+[node name="Cutscene12" type="Sprite2D" parent="Panels" unique_id=343635969]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("13_u8lnu")
+
+[node name="Cutscene13" type="Sprite2D" parent="Panels" unique_id=1346691898]
+visible = false
+position = Vector2(576, 324)
+texture = ExtResource("14_q42al")
 
 [node name="BigFacePanel" type="Sprite2D" parent="Panels" unique_id=477883483]
+visible = false
 position = Vector2(576, 324)
-texture = ExtResource("3_kgahh")
+texture = ExtResource("15_q6gjd")
 
 [node name="ContinueLabel" type="Label" parent="." unique_id=1913046928]
 offset_left = 943.0
