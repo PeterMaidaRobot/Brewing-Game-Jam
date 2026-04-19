@@ -16,7 +16,7 @@ func _process(delta: float) -> void:
 	strength -= 1
 	if strength < 200:
 		# Create an opacity tween to dim the alpha channel to 10% before we snap it out of existence
-		var tween = create_tween()
+		var tween : Tween = create_tween()
 		tween.tween_property(self, "modulate:a", 0.1, 5)
 	if strength <= 0:
 		queue_free()

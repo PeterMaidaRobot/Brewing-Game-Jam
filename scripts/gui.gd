@@ -12,8 +12,8 @@ func _process(delta: float) -> void:
 	pass
 
 
-func show_you_win():
+func show_you_win() -> void:
 	$WinLabel.show()
 	
-func show_you_lose():
+func show_you_lose() -> void:
 	$LoseLabel.show()

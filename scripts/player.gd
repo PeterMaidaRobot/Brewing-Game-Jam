@@ -5,8 +5,8 @@ extends CharacterBody2D
 signal lose_game
 
 
-@export var speed = 400 # pixels per second player speed
-var screen_size # game window size
+@export var speed : int = 400 # pixels per second player speed
+var screen_size : Vector2 # game window size
 
 
 # Called when the node enters the scene tree for the first time.
@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:	
-	var velocity = Vector2.ZERO
+	var velocity : Vector2 = Vector2.ZERO
 	if Input.is_action_pressed("move_right"):
 		velocity.x += 1
 	if Input.is_action_pressed("move_left"):
