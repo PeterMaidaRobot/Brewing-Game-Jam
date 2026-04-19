@@ -40,6 +40,7 @@ next_level_num = 99
 
 [node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_3p04p")]
 position = Vector2(565, 614)
+scale = Vector2(1, 1)
 
 [node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_qsp8v")]
 position = Vector2(354, 232.99997)

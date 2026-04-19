@@ -2,6 +2,14 @@
 
 [ext_resource type="Script" uid="uid://dfo7r770s3ix8" path="res://scripts/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dqro0amu2p0ir" path="res://art/player.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://b7u5mokd6msyx" path="res://art/player_walk_down_1.png" id="3_smehm"]
+[ext_resource type="Texture2D" uid="uid://v0ycdjdbst1b" path="res://art/player_vomit_1.png" id="3_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://31qy10ei7d0u" path="res://art/player_vomit_2.png" id="4_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://bhxr6p22ee4r6" path="res://art/player_walk_down_2.png" id="4_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://dwngwwu6oj3by" path="res://art/player_walk_right_1.png" id="5_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://418tnp5f1iwr" path="res://art/player_walk_right_2.png" id="6_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://crf7mut4fgflu" path="res://art/player_walk_up_1.png" id="7_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://c1x7fi5dt2d1x" path="res://art/player_walk_up_2.png" id="8_jej6c"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -12,26 +20,67 @@ animations = [{
 "loop": true,
 "name": &"stand",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_d2wvv")
+}],
+"loop": true,
+"name": &"vomit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_smehm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ur7pv")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_d2wvv")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_3v2ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jej6c")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 3.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(23, 14.5)
+size = Vector2(20, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
-size = Vector2(18.561152, 28)
+size = Vector2(21.069416, 38)
 
 [node name="Player" type="CharacterBody2D" unique_id=1573098926]
-scale = Vector2(2, 2)
 script = ExtResource("1_onrkg")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=813636378]
-scale = Vector2(0.287, 0.287)
 sprite_frames = SubResource("SpriteFrames_onrkg")
 animation = &"stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=908861233]
-position = Vector2(-1.5, 8.75)
+position = Vector2(-1, 17.5)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="SmokeHitbox" type="Area2D" parent="." unique_id=346136574]
@@ -40,7 +89,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmokeHitbox" unique_id=1127072397]
-position = Vector2(-1.7557847, -3.5)
+position = Vector2(2.3841858e-07, 3)
 shape = SubResource("RectangleShape2D_i3pqv")
 debug_color = Color(0.88769287, 0.00028243125, 0.8027765, 0.41960785)
 

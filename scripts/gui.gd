@@ -5,6 +5,7 @@ extends CanvasLayer
 func _ready() -> void:
 	$WinLabel.hide()
 	$LoseLabel.hide()
+	$RestartLabel.hide()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -17,3 +18,4 @@ func show_you_win() -> void:
 	
 func show_you_lose() -> void:
 	$LoseLabel.show()
+	$RestartLabel.show()

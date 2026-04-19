@@ -20,10 +20,9 @@ func handle_restart() -> void:
 		get_tree().reload_current_scene()
 
 func _on_goal_win_game() -> void:
-	$GUI.show_you_win()
-	#get_tree().paused = true # TODO implement
+	$GUI.show_you_win() # This does nothing since we move to the next level immediately with a congrats
 
 
 func _on_player_lose_game() -> void:
 	$GUI.show_you_lose()
-	#get_tree().paused = true # TODO implement
+	$Player.vomit()

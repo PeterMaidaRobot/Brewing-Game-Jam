@@ -17,118 +17,118 @@ texture = ExtResource("1_egpjd")
 [node name="YSortedSprites" type="Node2D" parent="." unique_id=829975525]
 y_sort_enabled = true
 
-[node name="Logs" type="Node2D" parent="YSortedSprites" unique_id=1647442839]
+[node name="Logs_Trees" type="Node2D" parent="YSortedSprites" unique_id=1647442839]
 y_sort_enabled = true
 
-[node name="Tree1" parent="YSortedSprites/Logs" unique_id=1624868308 instance=ExtResource("3_ty81x")]
+[node name="Tree1" parent="YSortedSprites/Logs_Trees" unique_id=1624868308 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(842, 358)
 
-[node name="Tree2" parent="YSortedSprites/Logs" unique_id=376021779 instance=ExtResource("3_ty81x")]
+[node name="Tree2" parent="YSortedSprites/Logs_Trees" unique_id=376021779 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(934, 320)
 
-[node name="Tree3" parent="YSortedSprites/Logs" unique_id=640200958 instance=ExtResource("3_ty81x")]
+[node name="Tree3" parent="YSortedSprites/Logs_Trees" unique_id=640200958 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(777, 189)
 
-[node name="Tree4" parent="YSortedSprites/Logs" unique_id=36510039 instance=ExtResource("3_ty81x")]
+[node name="Tree4" parent="YSortedSprites/Logs_Trees" unique_id=36510039 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(891, 146)
 
-[node name="Tree5" parent="YSortedSprites/Logs" unique_id=1224592741 instance=ExtResource("3_ty81x")]
+[node name="Tree5" parent="YSortedSprites/Logs_Trees" unique_id=1224592741 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1014, 183)
 
-[node name="Tree6" parent="YSortedSprites/Logs" unique_id=2106147118 instance=ExtResource("3_ty81x")]
+[node name="Tree6" parent="YSortedSprites/Logs_Trees" unique_id=2106147118 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1093, 302)
 
-[node name="Tree7" parent="YSortedSprites/Logs" unique_id=338995392 instance=ExtResource("3_ty81x")]
+[node name="Tree7" parent="YSortedSprites/Logs_Trees" unique_id=338995392 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1053, 442)
 
-[node name="Tree8" parent="YSortedSprites/Logs" unique_id=1809114194 instance=ExtResource("3_ty81x")]
+[node name="Tree8" parent="YSortedSprites/Logs_Trees" unique_id=1809114194 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(943, 474)
 
-[node name="Tree9" parent="YSortedSprites/Logs" unique_id=842214116 instance=ExtResource("3_ty81x")]
+[node name="Tree9" parent="YSortedSprites/Logs_Trees" unique_id=842214116 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(809, 449)
 
-[node name="Tree10" parent="YSortedSprites/Logs" unique_id=1510845776 instance=ExtResource("3_ty81x")]
+[node name="Tree10" parent="YSortedSprites/Logs_Trees" unique_id=1510845776 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(752, 298)
 
-[node name="Tree11" parent="YSortedSprites/Logs" unique_id=882977291 instance=ExtResource("3_ty81x")]
+[node name="Tree11" parent="YSortedSprites/Logs_Trees" unique_id=882977291 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(836, 242)
 
-[node name="Tree12" parent="YSortedSprites/Logs" unique_id=750870052 instance=ExtResource("3_ty81x")]
+[node name="Tree12" parent="YSortedSprites/Logs_Trees" unique_id=750870052 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(938, 213)
 
-[node name="Tree13" parent="YSortedSprites/Logs" unique_id=1373515044 instance=ExtResource("3_ty81x")]
+[node name="Tree13" parent="YSortedSprites/Logs_Trees" unique_id=1373515044 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(948, 148)
 
-[node name="Tree14" parent="YSortedSprites/Logs" unique_id=33444154 instance=ExtResource("3_ty81x")]
+[node name="Tree14" parent="YSortedSprites/Logs_Trees" unique_id=33444154 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(948, 148)
 
-[node name="Tree15" parent="YSortedSprites/Logs" unique_id=97805258 instance=ExtResource("3_ty81x")]
+[node name="Tree15" parent="YSortedSprites/Logs_Trees" unique_id=97805258 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1075, 129)
 
-[node name="Tree16" parent="YSortedSprites/Logs" unique_id=1605756809 instance=ExtResource("3_ty81x")]
+[node name="Tree16" parent="YSortedSprites/Logs_Trees" unique_id=1605756809 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1099, 211)
 
-[node name="Tree17" parent="YSortedSprites/Logs" unique_id=700535183 instance=ExtResource("3_ty81x")]
+[node name="Tree17" parent="YSortedSprites/Logs_Trees" unique_id=700535183 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1019, 318)
 
-[node name="Tree18" parent="YSortedSprites/Logs" unique_id=1101806148 instance=ExtResource("3_ty81x")]
+[node name="Tree18" parent="YSortedSprites/Logs_Trees" unique_id=1101806148 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1110, 521)
 
-[node name="Tree19" parent="YSortedSprites/Logs" unique_id=1955113318 instance=ExtResource("3_ty81x")]
+[node name="Tree19" parent="YSortedSprites/Logs_Trees" unique_id=1955113318 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1000, 559)
 
-[node name="Tree20" parent="YSortedSprites/Logs" unique_id=1577703577 instance=ExtResource("3_ty81x")]
+[node name="Tree20" parent="YSortedSprites/Logs_Trees" unique_id=1577703577 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(899, 591)
 
-[node name="Tree21" parent="YSortedSprites/Logs" unique_id=1894462468 instance=ExtResource("3_ty81x")]
+[node name="Tree21" parent="YSortedSprites/Logs_Trees" unique_id=1894462468 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(825, 628)
 
-[node name="Tree22" parent="YSortedSprites/Logs" unique_id=1689070199 instance=ExtResource("3_ty81x")]
+[node name="Tree22" parent="YSortedSprites/Logs_Trees" unique_id=1689070199 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(1066, 633)
 
-[node name="Tree23" parent="YSortedSprites/Logs" unique_id=722739620 instance=ExtResource("3_ty81x")]
+[node name="Tree23" parent="YSortedSprites/Logs_Trees" unique_id=722739620 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(740, 617)
 
-[node name="Tree24" parent="YSortedSprites/Logs" unique_id=101493408 instance=ExtResource("3_ty81x")]
+[node name="Tree24" parent="YSortedSprites/Logs_Trees" unique_id=101493408 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(248, 615)
 
-[node name="Tree25" parent="YSortedSprites/Logs" unique_id=1861348692 instance=ExtResource("3_ty81x")]
+[node name="Tree25" parent="YSortedSprites/Logs_Trees" unique_id=1861348692 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(292, 524)
 
-[node name="Tree26" parent="YSortedSprites/Logs" unique_id=1970557235 instance=ExtResource("3_ty81x")]
+[node name="Tree26" parent="YSortedSprites/Logs_Trees" unique_id=1970557235 instance=ExtResource("3_ty81x")]
 y_sort_enabled = true
 position = Vector2(208, 573)
 
-[node name="Log1" parent="YSortedSprites/Logs" unique_id=2121651449 instance=ExtResource("3_p8wlm")]
+[node name="Log1" parent="YSortedSprites/Logs_Trees" unique_id=2121651449 instance=ExtResource("3_p8wlm")]
 y_sort_enabled = true
 position = Vector2(782, 502)
 
-[node name="Log2" parent="YSortedSprites/Logs" unique_id=213238104 instance=ExtResource("3_p8wlm")]
+[node name="Log2" parent="YSortedSprites/Logs_Trees" unique_id=213238104 instance=ExtResource("3_p8wlm")]
 y_sort_enabled = true
 position = Vector2(724, 46)
 

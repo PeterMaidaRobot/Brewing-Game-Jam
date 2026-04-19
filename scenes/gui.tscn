@@ -13,8 +13,17 @@ offset_bottom = 290.0
 text = "You Win!"
 
 [node name="LoseLabel" type="Label" parent="." unique_id=624259505]
-offset_left = 557.0
-offset_top = 295.0
-offset_right = 627.0
-offset_bottom = 318.0
-text = "You lose!"
+offset_left = 539.0
+offset_top = 194.0
+offset_right = 640.0
+offset_bottom = 244.25
+theme_override_font_sizes/font_size = 36
+text = "BLEH!"
+
+[node name="RestartLabel" type="Label" parent="." unique_id=526682269]
+offset_left = 514.0
+offset_top = 258.0
+offset_right = 735.0
+offset_bottom = 308.25
+theme_override_font_sizes/font_size = 18
+text = "Press \"R\" to restart"

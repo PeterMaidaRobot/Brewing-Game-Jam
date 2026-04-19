@@ -81,7 +81,7 @@ scale = Vector2(5.8819265, 2.8393373)
 next_level_num = 2
 
 [node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_dga24")]
-position = Vector2(565, 614)
+position = Vector2(567, 588)
 
 [node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_qxy0u")]
 position = Vector2(760, 332)
