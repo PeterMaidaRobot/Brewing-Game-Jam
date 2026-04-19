@@ -25,4 +25,4 @@ func _on_goal_win_game() -> void:
 
 func _on_player_lose_game() -> void:
 	$GUI.show_you_lose()
-	$Player.vomit()
+	$Y_Sorted_Sprites/Player.vomit()

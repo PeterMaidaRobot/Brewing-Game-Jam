@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 # Create a circle around the cauldron with
 # a distinct range away, given some variation further away
 # the desired number of smoke particles in the ring
-func create_smoke_ring(range : float, count : int, variation : float) -> void:
+func create_smoke_ring(range : float, count : int, variation : float, init_strength : int) -> void:
 	for i in range(count):
 	
 		# Create a new instance of the Smoke Scene
@@ -34,20 +34,24 @@ func create_smoke_ring(range : float, count : int, variation : float) -> void:
 		smoke.position = smoke_spawn_location.position + Vector2(layer, layer).rotated(direction)
 		
 		# Add some randomness to the direction.
-		direction += randf_range(-PI / 4, PI / 4)
+		direction += randf_range(-PI / 8, PI / 8)
 		smoke.rotation = direction
 		
 		# Choose the velocity for the mob.
-		var velocity : Vector2 = Vector2(5.0, 20.0)
+		var ring_smoke_velocity : int = 10.0
+		var velocity : Vector2 = Vector2(ring_smoke_velocity, ring_smoke_velocity)
 		smoke.linear_velocity = velocity.rotated(direction)
 		
 		# Spawn the smoke by adding it to the Main scene.
+		smoke.init(init_strength)
 		add_child(smoke)
 
 func create_initial_smoke_cloud() -> void:
-	create_smoke_ring(100, 50, 0)
-	create_smoke_ring(50, 50, 20)
-	create_smoke_ring(10, 5, 10)
+	#var init_strength : int = 800 - (range * 12)
+	create_smoke_ring(60, 50, 0, 200)
+	create_smoke_ring(30, 50, 20, 350)
+	create_smoke_ring(10, 40, 10, 500)
+	create_smoke_ring(0, 20, 0, 600)
 	
 	
 	
@@ -71,7 +75,8 @@ func _on_smoke_timer_timeout() -> void:
 	smoke.rotation = direction
 	
 	# Choose the velocity for the mob.
-	var velocity : Vector2 = Vector2(randf_range(5.0, 10.0), 0.0)
+	var smoke_velocity : int = 10.0
+	var velocity : Vector2 = Vector2(randf_range(smoke_velocity - 5.0, smoke_velocity), smoke_velocity)
 	smoke.linear_velocity = velocity.rotated(direction)
 	
 	# Spawn the mob by adding it to the Main scene.

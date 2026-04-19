@@ -1,104 +1,567 @@
 [gd_scene format=3 uid="uid://mjvdcl7erbjb"]
 
-[ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_oc4kc"]
 [ext_resource type="Script" uid="uid://dfxfvmy3nw80k" path="res://scripts/levels/level_1.gd" id="1_s8va5"]
+[ext_resource type="Texture2D" uid="uid://bc4mon8a3po31" path="res://art/level_background.png" id="2_dga24"]
 [ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_s8va5"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_dga24"]
 [ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_excbq"]
 [ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_iav0o"]
+[ext_resource type="PackedScene" uid="uid://dxbl403mbroyc" path="res://scenes/tree1.tscn" id="8_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://dpae641xakvmh" path="res://scenes/rock1.tscn" id="9_excbq"]
+[ext_resource type="PackedScene" uid="uid://ddve4y4m4xuvm" path="res://scenes/log1.tscn" id="10_iav0o"]
+[ext_resource type="PackedScene" uid="uid://dssh2jb117enq" path="res://scenes/stone1.tscn" id="11_excbq"]
 
 [node name="Level1" type="Node" unique_id=645462730]
 script = ExtResource("1_s8va5")
 
-[node name="Background" type="ColorRect" parent="." unique_id=1937996737]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.45314705, 0.48958445, 0.3594718, 1)
-
-[node name="Logs" type="Node" parent="." unique_id=1611183669]
-
-[node name="Log" parent="Logs" unique_id=1126208388 instance=ExtResource("1_oc4kc")]
-position = Vector2(478, 344)
-
-[node name="Log4" parent="Logs" unique_id=1881861818 instance=ExtResource("1_oc4kc")]
-position = Vector2(478, 224)
-
-[node name="Log5" parent="Logs" unique_id=1787282681 instance=ExtResource("1_oc4kc")]
-position = Vector2(478, 107)
-
-[node name="Log6" parent="Logs" unique_id=1386054571 instance=ExtResource("1_oc4kc")]
-position = Vector2(478, -10)
-
-[node name="Log7" parent="Logs" unique_id=635346156 instance=ExtResource("1_oc4kc")]
-position = Vector2(658, -10)
-
-[node name="Log8" parent="Logs" unique_id=273139932 instance=ExtResource("1_oc4kc")]
-position = Vector2(658, 112)
-
-[node name="Log9" parent="Logs" unique_id=1167050139 instance=ExtResource("1_oc4kc")]
-position = Vector2(658, 234)
-
-[node name="Log10" parent="Logs" unique_id=1872957268 instance=ExtResource("1_oc4kc")]
-position = Vector2(656, 354)
-
-[node name="Log11" parent="Logs" unique_id=1880321333 instance=ExtResource("1_oc4kc")]
-position = Vector2(776, 234)
-
-[node name="Log16" parent="Logs" unique_id=1925874092 instance=ExtResource("1_oc4kc")]
-position = Vector2(718, 234)
-
-[node name="Log12" parent="Logs" unique_id=56930147 instance=ExtResource("1_oc4kc")]
-position = Vector2(833, 234)
-
-[node name="Log13" parent="Logs" unique_id=1065531710 instance=ExtResource("1_oc4kc")]
-position = Vector2(891, 235)
-
-[node name="Log14" parent="Logs" unique_id=626786922 instance=ExtResource("1_oc4kc")]
-position = Vector2(948, 235)
-
-[node name="Log15" parent="Logs" unique_id=1391492790 instance=ExtResource("1_oc4kc")]
-position = Vector2(1003, 235)
-
-[node name="Log17" parent="Logs" unique_id=329878019 instance=ExtResource("1_oc4kc")]
-position = Vector2(1058, 235)
-
-[node name="Log18" parent="Logs" unique_id=453509264 instance=ExtResource("1_oc4kc")]
-position = Vector2(1118, 235)
-
-[node name="Log2" parent="Logs" unique_id=1306931432 instance=ExtResource("1_oc4kc")]
-position = Vector2(478, 466)
-
-[node name="Log3" parent="Logs" unique_id=222852660 instance=ExtResource("1_oc4kc")]
-position = Vector2(478, 586)
+[node name="Background" type="Sprite2D" parent="." unique_id=1851986050]
+position = Vector2(576, 324)
+texture = ExtResource("2_dga24")
 
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_s8va5")]
 position = Vector2(569.00006, 29)
 scale = Vector2(5.8819265, 2.8393373)
 next_level_num = 2
 
-[node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_dga24")]
-position = Vector2(567, 588)
+[node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=755648818]
+y_sort_enabled = true
 
-[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_qxy0u")]
-position = Vector2(760, 332)
+[node name="Witch" parent="Y_Sorted_Sprites" unique_id=2028683889 instance=ExtResource("4_qxy0u")]
+y_sort_enabled = true
+position = Vector2(737.99994, 333)
 
-[node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_excbq")]
-position = Vector2(684, 491)
+[node name="Fan" parent="Y_Sorted_Sprites" unique_id=151114730 instance=ExtResource("5_excbq")]
+y_sort_enabled = true
+position = Vector2(665, 513)
 scale = Vector2(1.233, 1.234)
 child_breeze_dir = Vector2(0, -1)
 
-[node name="Fan2" parent="." unique_id=1114773305 instance=ExtResource("5_excbq")]
-position = Vector2(882, 582)
+[node name="Fan2" parent="Y_Sorted_Sprites" unique_id=1114773305 instance=ExtResource("5_excbq")]
+y_sort_enabled = true
+position = Vector2(845, 543)
 scale = Vector2(1.233, 1.234)
 fan_on = true
 child_breeze_dir = Vector2(0, -1)
 
-[node name="Cauldron" parent="." unique_id=1046902203 instance=ExtResource("6_iav0o")]
+[node name="Cauldron" parent="Y_Sorted_Sprites" unique_id=1046902203 instance=ExtResource("6_iav0o")]
+y_sort_enabled = true
+position = Vector2(710, 356)
+
+[node name="Trees" type="Node2D" parent="Y_Sorted_Sprites" unique_id=382418970]
+y_sort_enabled = true
 position = Vector2(732, 352)
 
+[node name="Tree1" parent="Y_Sorted_Sprites/Trees" unique_id=1624868308 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-244, 278)
+
+[node name="Tree2" parent="Y_Sorted_Sprites/Trees" unique_id=1640400497 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-267, 242)
+
+[node name="Tree3" parent="Y_Sorted_Sprites/Trees" unique_id=177591270 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-236, 208)
+
+[node name="Tree4" parent="Y_Sorted_Sprites/Trees" unique_id=1606193010 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-265, 169)
+
+[node name="Tree5" parent="Y_Sorted_Sprites/Trees" unique_id=1889028735 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-231, 64)
+
+[node name="Tree6" parent="Y_Sorted_Sprites/Trees" unique_id=2046396053 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-265, 29)
+
+[node name="Tree7" parent="Y_Sorted_Sprites/Trees" unique_id=1655520265 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-236, -10)
+
+[node name="Tree8" parent="Y_Sorted_Sprites/Trees" unique_id=1394776343 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-276, -46)
+
+[node name="Tree9" parent="Y_Sorted_Sprites/Trees" unique_id=1219188867 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-230, -88)
+
+[node name="Tree10" parent="Y_Sorted_Sprites/Trees" unique_id=1457916353 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-264, -123)
+
+[node name="Tree11" parent="Y_Sorted_Sprites/Trees" unique_id=1722847752 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-231, -156)
+
+[node name="Tree12" parent="Y_Sorted_Sprites/Trees" unique_id=1506453871 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-271, -192)
+
+[node name="Tree13" parent="Y_Sorted_Sprites/Trees" unique_id=2139059009 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-238, -230)
+
+[node name="Tree14" parent="Y_Sorted_Sprites/Trees" unique_id=549981883 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-274, -270)
+
+[node name="Tree15" parent="Y_Sorted_Sprites/Trees" unique_id=54525380 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-240, -308)
+
+[node name="Tree16" parent="Y_Sorted_Sprites/Trees" unique_id=2146360747 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-271, -336)
+
+[node name="Tree17" parent="Y_Sorted_Sprites/Trees" unique_id=2136355325 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-76, -337)
+
+[node name="Tree18" parent="Y_Sorted_Sprites/Trees" unique_id=2123714189 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-66, -301)
+
+[node name="Tree19" parent="Y_Sorted_Sprites/Trees" unique_id=144429763 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-77, -276)
+
+[node name="Tree20" parent="Y_Sorted_Sprites/Trees" unique_id=1928167641 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-53, -250)
+
+[node name="Tree21" parent="Y_Sorted_Sprites/Trees" unique_id=2045582403 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-84, -222)
+
+[node name="Tree22" parent="Y_Sorted_Sprites/Trees" unique_id=1844455595 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-48, -191)
+
+[node name="Tree23" parent="Y_Sorted_Sprites/Trees" unique_id=530887295 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-82, -155)
+
+[node name="Tree24" parent="Y_Sorted_Sprites/Trees" unique_id=192703692 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-42, -117)
+
+[node name="Tree25" parent="Y_Sorted_Sprites/Trees" unique_id=1558993698 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-83, -85)
+
+[node name="Tree26" parent="Y_Sorted_Sprites/Trees" unique_id=73603280 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-49, -69)
+
+[node name="Tree27" parent="Y_Sorted_Sprites/Trees" unique_id=1711229220 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-84, -38)
+
+[node name="Tree28" parent="Y_Sorted_Sprites/Trees" unique_id=454140530 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-63, 0)
+
+[node name="Tree29" parent="Y_Sorted_Sprites/Trees" unique_id=1121250906 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(17, -77)
+
+[node name="Tree30" parent="Y_Sorted_Sprites/Trees" unique_id=1084622579 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(365, -70)
+
+[node name="Tree31" parent="Y_Sorted_Sprites/Trees" unique_id=1947775805 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(315, -87)
+
+[node name="Tree32" parent="Y_Sorted_Sprites/Trees" unique_id=1815167997 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(307, 41)
+
+[node name="Tree33" parent="Y_Sorted_Sprites/Trees" unique_id=242714087 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(362, 79)
+
+[node name="Tree34" parent="Y_Sorted_Sprites/Trees" unique_id=436127944 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(317, 119)
+
+[node name="Tree35" parent="Y_Sorted_Sprites/Trees" unique_id=700599660 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(386, 195)
+
+[node name="Tree36" parent="Y_Sorted_Sprites/Trees" unique_id=1117095765 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(309, 230)
+
+[node name="Tree37" parent="Y_Sorted_Sprites/Trees" unique_id=2029465127 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(356, 261)
+
+[node name="Tree38" parent="Y_Sorted_Sprites/Trees" unique_id=251265508 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(211, 279)
+
+[node name="Tree39" parent="Y_Sorted_Sprites/Trees" unique_id=1513655628 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(282, 277)
+
+[node name="Tree40" parent="Y_Sorted_Sprites/Trees" unique_id=1784140017 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-672, 237)
+
+[node name="Tree41" parent="Y_Sorted_Sprites/Trees" unique_id=1001076454 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-655, -104)
+
+[node name="Tree42" parent="Y_Sorted_Sprites/Trees" unique_id=446771356 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-681, -253)
+
+[node name="Tree43" parent="Y_Sorted_Sprites/Trees" unique_id=151740811 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-393, -22)
+
+[node name="Tree44" parent="Y_Sorted_Sprites/Trees" unique_id=1986305209 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-343, 99)
+
+[node name="Tree45" parent="Y_Sorted_Sprites/Trees" unique_id=752186126 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(-322, 183)
+
+[node name="Tree46" parent="Y_Sorted_Sprites/Trees" unique_id=2125555857 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(123, -253)
+
+[node name="Tree47" parent="Y_Sorted_Sprites/Trees" unique_id=910591280 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(246, -196)
+
+[node name="Tree48" parent="Y_Sorted_Sprites/Trees" unique_id=693824765 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(318, -285)
+
+[node name="Tree49" parent="Y_Sorted_Sprites/Trees" unique_id=215296250 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(375, -222)
+
+[node name="Tree50" parent="Y_Sorted_Sprites/Trees" unique_id=251817555 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(158, -191)
+
+[node name="Tree51" parent="Y_Sorted_Sprites/Trees" unique_id=2008683096 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(51, -246)
+
+[node name="Tree52" parent="Y_Sorted_Sprites/Trees" unique_id=1181289839 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(102, -134)
+
+[node name="Tree53" parent="Y_Sorted_Sprites/Trees" unique_id=1968118969 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(188, -102)
+
+[node name="Tree54" parent="Y_Sorted_Sprites/Trees" unique_id=210827244 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(251, -65)
+
+[node name="Tree55" parent="Y_Sorted_Sprites/Trees" unique_id=931329070 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(145, -64)
+
+[node name="Tree56" parent="Y_Sorted_Sprites/Trees" unique_id=1611852654 instance=ExtResource("8_qxy0u")]
+y_sort_enabled = true
+position = Vector2(32, -193)
+
+[node name="Rocks" type="Node2D" parent="Y_Sorted_Sprites" unique_id=1852651277]
+y_sort_enabled = true
+
+[node name="Rock1" parent="Y_Sorted_Sprites/Rocks" unique_id=1472751596 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(915, 291)
+
+[node name="Rock2" parent="Y_Sorted_Sprites/Rocks" unique_id=575647967 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(836, 289)
+
+[node name="Rock3" parent="Y_Sorted_Sprites/Rocks" unique_id=757080315 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(717, 284)
+
+[node name="Rock4" parent="Y_Sorted_Sprites/Rocks" unique_id=759901575 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(791, 274)
+
+[node name="Rock5" parent="Y_Sorted_Sprites/Rocks" unique_id=2100667185 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(1065, 115)
+
+[node name="Rock6" parent="Y_Sorted_Sprites/Rocks" unique_id=448534433 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(373, 144)
+
+[node name="Rock7" parent="Y_Sorted_Sprites/Rocks" unique_id=845526057 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(36, 278)
+
+[node name="Rock8" parent="Y_Sorted_Sprites/Rocks" unique_id=1324381870 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(115, 89)
+
+[node name="Rock9" parent="Y_Sorted_Sprites/Rocks" unique_id=1071304974 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(132, 32)
+
+[node name="Rock10" parent="Y_Sorted_Sprites/Rocks" unique_id=712743141 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(382, 46)
+
+[node name="Rock11" parent="Y_Sorted_Sprites/Rocks" unique_id=644239518 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(293, 391)
+
+[node name="Rock12" parent="Y_Sorted_Sprites/Rocks" unique_id=697813371 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(342, 521)
+
+[node name="Rock13" parent="Y_Sorted_Sprites/Rocks" unique_id=2023703875 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(121, 623)
+
+[node name="Rock14" parent="Y_Sorted_Sprites/Rocks" unique_id=781566324 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(32, 606)
+
+[node name="Rock15" parent="Y_Sorted_Sprites/Rocks" unique_id=1565571390 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(68, 375)
+
+[node name="Rock16" parent="Y_Sorted_Sprites/Rocks" unique_id=2009638343 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(429, 621)
+
+[node name="Rock17" parent="Y_Sorted_Sprites/Rocks" unique_id=237059752 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(421, 571)
+
+[node name="Rock18" parent="Y_Sorted_Sprites/Rocks" unique_id=1943892621 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(517, 433)
+
+[node name="Rock27" parent="Y_Sorted_Sprites/Rocks" unique_id=40463860 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(498, 479)
+
+[node name="Rock28" parent="Y_Sorted_Sprites/Rocks" unique_id=616981893 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(490, 521)
+
+[node name="Rock19" parent="Y_Sorted_Sprites/Rocks" unique_id=321202407 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(449, 403)
+
+[node name="Rock20" parent="Y_Sorted_Sprites/Rocks" unique_id=342026566 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(402, 315)
+
+[node name="Rock21" parent="Y_Sorted_Sprites/Rocks" unique_id=18696590 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(779, 625)
+
+[node name="Rock22" parent="Y_Sorted_Sprites/Rocks" unique_id=1742013427 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(742, 596)
+
+[node name="Rock23" parent="Y_Sorted_Sprites/Rocks" unique_id=126264168 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(693, 612)
+
+[node name="Rock24" parent="Y_Sorted_Sprites/Rocks" unique_id=1899073409 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(981, 333)
+
+[node name="Rock25" parent="Y_Sorted_Sprites/Rocks" unique_id=1986426780 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(1003, 434)
+
+[node name="Rock26" parent="Y_Sorted_Sprites/Rocks" unique_id=62276785 instance=ExtResource("9_excbq")]
+y_sort_enabled = true
+position = Vector2(969, 579)
+
+[node name="Logs" type="Node2D" parent="Y_Sorted_Sprites" unique_id=1587113532]
+y_sort_enabled = true
+position = Vector2(576, 324)
+
+[node name="Log1" parent="Y_Sorted_Sprites/Logs" unique_id=95831242 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(342, -13)
+
+[node name="Log7" parent="Y_Sorted_Sprites/Logs" unique_id=60265191 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(-45, 34)
+
+[node name="Log2" parent="Y_Sorted_Sprites/Logs" unique_id=874271479 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(248, -12)
+
+[node name="Log3" parent="Y_Sorted_Sprites/Logs" unique_id=1895961282 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(151, -11)
+
+[node name="Log4" parent="Y_Sorted_Sprites/Logs" unique_id=1567558452 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(-204, -129)
+
+[node name="Log5" parent="Y_Sorted_Sprites/Logs" unique_id=629376241 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(129, 307)
+
+[node name="Log6" parent="Y_Sorted_Sprites/Logs" unique_id=811955396 instance=ExtResource("10_iav0o")]
+y_sort_enabled = true
+position = Vector2(373, -295)
+
+[node name="Stones" type="Node2D" parent="Y_Sorted_Sprites" unique_id=2140821492]
+y_sort_enabled = true
+position = Vector2(576, 324)
+
+[node name="Stone1" parent="Y_Sorted_Sprites/Stones" unique_id=117641414 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-289, 99)
+
+[node name="Stone2" parent="Y_Sorted_Sprites/Stones" unique_id=538131266 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-283, 116)
+
+[node name="Stone3" parent="Y_Sorted_Sprites/Stones" unique_id=1617160653 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-275, 136)
+
+[node name="Stone4" parent="Y_Sorted_Sprites/Stones" unique_id=1240001283 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-263, 150)
+
+[node name="Stone5" parent="Y_Sorted_Sprites/Stones" unique_id=671930706 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-265, 113)
+
+[node name="Stone6" parent="Y_Sorted_Sprites/Stones" unique_id=1762641012 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-263, 93)
+
+[node name="Stone7" parent="Y_Sorted_Sprites/Stones" unique_id=1564571355 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-299, 22)
+
+[node name="Stone8" parent="Y_Sorted_Sprites/Stones" unique_id=1117498530 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-287, -9)
+
+[node name="Stone9" parent="Y_Sorted_Sprites/Stones" unique_id=1584026890 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-285, -32)
+
+[node name="Stone10" parent="Y_Sorted_Sprites/Stones" unique_id=1271132853 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-230, -160)
+
+[node name="Stone11" parent="Y_Sorted_Sprites/Stones" unique_id=1461465072 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-237, -177)
+
+[node name="Stone12" parent="Y_Sorted_Sprites/Stones" unique_id=1995484261 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-220, -216)
+
+[node name="Stone13" parent="Y_Sorted_Sprites/Stones" unique_id=1498659470 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-207, -244)
+
+[node name="Stone14" parent="Y_Sorted_Sprites/Stones" unique_id=1343697870 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-433, -265)
+
+[node name="Stone15" parent="Y_Sorted_Sprites/Stones" unique_id=366702492 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-453, -208)
+
+[node name="Stone16" parent="Y_Sorted_Sprites/Stones" unique_id=1109893924 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-522, -18)
+
+[node name="Stone17" parent="Y_Sorted_Sprites/Stones" unique_id=1926601004 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-497, 89)
+
+[node name="Stone18" parent="Y_Sorted_Sprites/Stones" unique_id=535312373 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(82, 287)
+
+[node name="Stone19" parent="Y_Sorted_Sprites/Stones" unique_id=458211071 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(94, 273)
+
+[node name="Stone20" parent="Y_Sorted_Sprites/Stones" unique_id=395213441 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(143, 272)
+
+[node name="Stone21" parent="Y_Sorted_Sprites/Stones" unique_id=1110660701 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(155, 296)
+
+[node name="Stone22" parent="Y_Sorted_Sprites/Stones" unique_id=1097675623 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(400, 291)
+
+[node name="Stone23" parent="Y_Sorted_Sprites/Stones" unique_id=1247111457 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(326, 310)
+
+[node name="Stone24" parent="Y_Sorted_Sprites/Stones" unique_id=106446092 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(465, 286)
+
+[node name="Stone25" parent="Y_Sorted_Sprites/Stones" unique_id=2052547236 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(431, 30)
+
+[node name="Stone26" parent="Y_Sorted_Sprites/Stones" unique_id=1639273770 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(371, -26)
+
+[node name="Stone27" parent="Y_Sorted_Sprites/Stones" unique_id=1130318391 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(377, 8)
+
+[node name="Stone28" parent="Y_Sorted_Sprites/Stones" unique_id=463999159 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(227, -23)
+
+[node name="Stone29" parent="Y_Sorted_Sprites/Stones" unique_id=1144654111 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(459, -187)
+
+[node name="Stone30" parent="Y_Sorted_Sprites/Stones" unique_id=275814485 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(495, -184)
+
+[node name="Stone31" parent="Y_Sorted_Sprites/Stones" unique_id=822141912 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(432, -286)
+
+[node name="Stone32" parent="Y_Sorted_Sprites/Stones" unique_id=1576032411 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-179, -250)
+
+[node name="Stone33" parent="Y_Sorted_Sprites/Stones" unique_id=69134012 instance=ExtResource("11_excbq")]
+y_sort_enabled = true
+position = Vector2(-185, -106)
+
+[node name="Player" parent="Y_Sorted_Sprites" unique_id=1573098926 instance=ExtResource("3_dga24")]
+y_sort_enabled = true
+position = Vector2(567, 588)
+
 [connection signal="win_game" from="Goal" to="." method="_on_goal_win_game"]
-[connection signal="lose_game" from="Player" to="." method="_on_player_lose_game"]
+[connection signal="lose_game" from="Y_Sorted_Sprites/Player" to="." method="_on_player_lose_game"]

@@ -2,7 +2,10 @@ class_name Smoke
 extends RigidBody2D
 
 var fan_direction : Vector2 = Vector2(0.0, 0.0)
-var strength : int = 1200
+var strength : int = 750
+
+func init(_strength : int) -> void:
+	strength = _strength
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

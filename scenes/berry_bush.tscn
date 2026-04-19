@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpk88frlr6ttg"]
+
+[ext_resource type="Texture2D" uid="uid://x6bbn6n37r4s" path="res://art/berry_bush.png" id="1_2f0f0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xykto"]
+size = Vector2(20, 23)
+
+[node name="BerryBush" type="StaticBody2D" unique_id=375682262]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1582552015]
+texture = ExtResource("1_2f0f0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1985776836]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_xykto")
