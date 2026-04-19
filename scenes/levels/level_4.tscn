@@ -1,87 +1,455 @@
 [gd_scene format=3 uid="uid://dmnkgb0sy820t"]
 
 [ext_resource type="Script" uid="uid://b57rl8ekxa6j1" path="res://scripts/levels/level.gd" id="1_5vn0v"]
-[ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_rej77"]
 [ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_5vn0v"]
+[ext_resource type="Texture2D" uid="uid://bc4mon8a3po31" path="res://art/level_background.png" id="2_ts8eg"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_ts8eg"]
 [ext_resource type="PackedScene" uid="uid://cd5wqgh1joffo" path="res://scenes/witch.tscn" id="4_um320"]
 [ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_glw47"]
 [ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_4wsov"]
+[ext_resource type="PackedScene" uid="uid://dpae641xakvmh" path="res://scenes/rock1.tscn" id="8_glw47"]
+[ext_resource type="PackedScene" uid="uid://dxbl403mbroyc" path="res://scenes/tree1.tscn" id="8_um320"]
+[ext_resource type="PackedScene" uid="uid://ddve4y4m4xuvm" path="res://scenes/log1.tscn" id="9_glw47"]
 
 [node name="Level4" type="Node" unique_id=1804240899]
 script = ExtResource("1_5vn0v")
 metadata/_custom_type_script = "uid://b57rl8ekxa6j1"
 
-[node name="Background" type="ColorRect" parent="." unique_id=1048212525]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.45314705, 0.48958445, 0.3594718, 1)
-
-[node name="Logs" type="Node" parent="." unique_id=955531654]
-
-[node name="Log5" parent="Logs" unique_id=1126208388 instance=ExtResource("1_rej77")]
-position = Vector2(478, 107)
-
-[node name="Log9" parent="Logs" unique_id=783470483 instance=ExtResource("1_rej77")]
-position = Vector2(478, 228)
-
-[node name="Log10" parent="Logs" unique_id=1599442201 instance=ExtResource("1_rej77")]
-position = Vector2(308, 584)
-
-[node name="Log11" parent="Logs" unique_id=844425208 instance=ExtResource("1_rej77")]
-position = Vector2(430, 584)
-
-[node name="Log6" parent="Logs" unique_id=1337452315 instance=ExtResource("1_rej77")]
-position = Vector2(478, -10)
-
-[node name="Log7" parent="Logs" unique_id=688960248 instance=ExtResource("1_rej77")]
-position = Vector2(658, -10)
-
-[node name="Log12" parent="Logs" unique_id=35934001 instance=ExtResource("1_rej77")]
-position = Vector2(659, 110)
-
-[node name="Log13" parent="Logs" unique_id=548314197 instance=ExtResource("1_rej77")]
-position = Vector2(659, 229)
-
-[node name="Log14" parent="Logs" unique_id=1953530660 instance=ExtResource("1_rej77")]
-position = Vector2(660, 346)
-
-[node name="Log15" parent="Logs" unique_id=688423130 instance=ExtResource("1_rej77")]
-position = Vector2(662, 461)
-
-[node name="Log8" parent="Logs" unique_id=1241278564 instance=ExtResource("1_rej77")]
-position = Vector2(369, 585)
+[node name="Background" type="Sprite2D" parent="." unique_id=872330902]
+position = Vector2(578, 324)
+texture = ExtResource("2_ts8eg")
 
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_5vn0v")]
-position = Vector2(569, 30)
+position = Vector2(591, 28)
 scale = Vector2(5.8819265, 2.8393373)
 next_level_num = 99
 
-[node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_ts8eg")]
-position = Vector2(182, 611)
+[node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=1030978628]
+y_sort_enabled = true
 
-[node name="Witch" parent="." unique_id=2028683889 instance=ExtResource("4_um320")]
-position = Vector2(738, 259)
+[node name="Player" parent="Y_Sorted_Sprites" unique_id=1573098926 instance=ExtResource("3_ts8eg")]
+y_sort_enabled = true
+position = Vector2(544, 610)
 
-[node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_glw47")]
-position = Vector2(433.99997, 406)
+[node name="Fan" parent="Y_Sorted_Sprites" unique_id=151114730 instance=ExtResource("5_glw47")]
+y_sort_enabled = true
+position = Vector2(814, 292)
 rotation = -1.5707964
 scale = Vector2(1.233, 1.234)
 child_breeze_dir = Vector2(-1, 0)
 
-[node name="Fan2" parent="." unique_id=203800043 instance=ExtResource("5_glw47")]
-position = Vector2(121, 353)
+[node name="Fan2" parent="Y_Sorted_Sprites" unique_id=203800043 instance=ExtResource("5_glw47")]
+y_sort_enabled = true
+position = Vector2(362, 292.00003)
 rotation = 1.5707964
 scale = Vector2(1.233, 1.234)
 child_breeze_dir = Vector2(1, 0)
 
-[node name="Cauldron2" parent="." unique_id=1046902203 instance=ExtResource("6_4wsov")]
-position = Vector2(269, 301)
+[node name="Cauldron2" parent="Y_Sorted_Sprites" unique_id=1046902203 instance=ExtResource("6_4wsov")]
+y_sort_enabled = true
+position = Vector2(510, 223)
 
-[node name="Cauldron3" parent="." unique_id=1092185950 instance=ExtResource("6_4wsov")]
-position = Vector2(373, 303)
+[node name="Cauldron3" parent="Y_Sorted_Sprites" unique_id=1092185950 instance=ExtResource("6_4wsov")]
+y_sort_enabled = true
+position = Vector2(667, 224)
 
-[connection signal="lose_game" from="Player" to="." method="_on_player_lose_game"]
+[node name="Cauldron5" parent="Y_Sorted_Sprites" unique_id=1008535030 instance=ExtResource("6_4wsov")]
+y_sort_enabled = true
+position = Vector2(1011, 126)
+
+[node name="Fan3" parent="Y_Sorted_Sprites" unique_id=552471998 instance=ExtResource("5_glw47")]
+y_sort_enabled = true
+position = Vector2(632, 319)
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
+
+[node name="Fan4" parent="Y_Sorted_Sprites" unique_id=1105272247 instance=ExtResource("5_glw47")]
+y_sort_enabled = true
+position = Vector2(542, 319.99997)
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
+
+[node name="Rocks" type="Node2D" parent="Y_Sorted_Sprites" unique_id=2093542283]
+y_sort_enabled = true
+
+[node name="Rock1" parent="Y_Sorted_Sprites/Rocks" unique_id=1472751596 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(69, 373)
+
+[node name="Rock19" parent="Y_Sorted_Sprites/Rocks" unique_id=1041467778 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(490, 417)
+
+[node name="Rock20" parent="Y_Sorted_Sprites/Rocks" unique_id=1594215368 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(697, 427)
+
+[node name="Rock21" parent="Y_Sorted_Sprites/Rocks" unique_id=744079505 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(301, 350)
+
+[node name="Rock22" parent="Y_Sorted_Sprites/Rocks" unique_id=1678268104 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(372, 430)
+
+[node name="Rock23" parent="Y_Sorted_Sprites/Rocks" unique_id=232455128 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(838, 574)
+
+[node name="Rock2" parent="Y_Sorted_Sprites/Rocks" unique_id=759129237 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(111, 119)
+
+[node name="Rock3" parent="Y_Sorted_Sprites/Rocks" unique_id=395424267 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(369, 129)
+
+[node name="Rock4" parent="Y_Sorted_Sprites/Rocks" unique_id=1909400004 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(443, 191)
+
+[node name="Rock5" parent="Y_Sorted_Sprites/Rocks" unique_id=1154285807 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(907, 431)
+
+[node name="Rock6" parent="Y_Sorted_Sprites/Rocks" unique_id=1193027167 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(945, 559)
+
+[node name="Rock7" parent="Y_Sorted_Sprites/Rocks" unique_id=109097624 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(895, 515)
+
+[node name="Rock8" parent="Y_Sorted_Sprites/Rocks" unique_id=1111671697 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(767, 608)
+
+[node name="Rock9" parent="Y_Sorted_Sprites/Rocks" unique_id=1077477952 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(687, 607)
+
+[node name="Rock10" parent="Y_Sorted_Sprites/Rocks" unique_id=1675521301 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(378, 590)
+
+[node name="Rock11" parent="Y_Sorted_Sprites/Rocks" unique_id=1206254147 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(340, 501)
+
+[node name="Rock12" parent="Y_Sorted_Sprites/Rocks" unique_id=368118610 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(297, 416)
+
+[node name="Rock13" parent="Y_Sorted_Sprites/Rocks" unique_id=785601010 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(326, 219)
+
+[node name="Rock14" parent="Y_Sorted_Sprites/Rocks" unique_id=1195551773 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(1053, 475)
+
+[node name="Rock15" parent="Y_Sorted_Sprites/Rocks" unique_id=747327595 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(1127, 239)
+
+[node name="Rock16" parent="Y_Sorted_Sprites/Rocks" unique_id=1171851696 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(1038, 58)
+
+[node name="Rock17" parent="Y_Sorted_Sprites/Rocks" unique_id=1463189654 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(1135, 147)
+
+[node name="Rock18" parent="Y_Sorted_Sprites/Rocks" unique_id=1179874617 instance=ExtResource("8_glw47")]
+y_sort_enabled = true
+position = Vector2(957, 122)
+
+[node name="Trees" type="Node2D" parent="Y_Sorted_Sprites" unique_id=824176511]
+y_sort_enabled = true
+
+[node name="Tree1" parent="Y_Sorted_Sprites/Trees" unique_id=1624868308 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(328, 464)
+
+[node name="Tree36" parent="Y_Sorted_Sprites/Trees" unique_id=1739374401 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(446, 589)
+
+[node name="Tree37" parent="Y_Sorted_Sprites/Trees" unique_id=1047950608 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(434, 551)
+
+[node name="Tree38" parent="Y_Sorted_Sprites/Trees" unique_id=656835704 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(769, 548)
+
+[node name="Tree39" parent="Y_Sorted_Sprites/Trees" unique_id=2067463350 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(483, 627)
+
+[node name="Tree2" parent="Y_Sorted_Sprites/Trees" unique_id=489836425 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(57, 497)
+
+[node name="Tree3" parent="Y_Sorted_Sprites/Trees" unique_id=102023526 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(67, 325)
+
+[node name="Tree4" parent="Y_Sorted_Sprites/Trees" unique_id=385141942 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(38, 257)
+
+[node name="Tree5" parent="Y_Sorted_Sprites/Trees" unique_id=663452714 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(73, 151)
+
+[node name="Tree6" parent="Y_Sorted_Sprites/Trees" unique_id=1976010459 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(123, 44)
+
+[node name="Tree7" parent="Y_Sorted_Sprites/Trees" unique_id=2075559220 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(120, 629)
+
+[node name="Tree8" parent="Y_Sorted_Sprites/Trees" unique_id=1135103378 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(410, 627)
+
+[node name="Tree9" parent="Y_Sorted_Sprites/Trees" unique_id=1873627804 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(813, 629)
+
+[node name="Tree10" parent="Y_Sorted_Sprites/Trees" unique_id=1577619403 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(916, 601)
+
+[node name="Tree11" parent="Y_Sorted_Sprites/Trees" unique_id=1869222479 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1072, 635)
+
+[node name="Tree12" parent="Y_Sorted_Sprites/Trees" unique_id=454674962 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1120, 532)
+
+[node name="Tree13" parent="Y_Sorted_Sprites/Trees" unique_id=1161903810 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1012, 506)
+
+[node name="Tree14" parent="Y_Sorted_Sprites/Trees" unique_id=1855281079 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1102, 372)
+
+[node name="Tree15" parent="Y_Sorted_Sprites/Trees" unique_id=582785586 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1001, 279)
+
+[node name="Tree16" parent="Y_Sorted_Sprites/Trees" unique_id=255238538 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1084, 220)
+
+[node name="Tree17" parent="Y_Sorted_Sprites/Trees" unique_id=1798712 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(994, 84)
+
+[node name="Tree18" parent="Y_Sorted_Sprites/Trees" unique_id=2098301581 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(1104, 56)
+
+[node name="Tree19" parent="Y_Sorted_Sprites/Trees" unique_id=729220537 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(879, 47)
+
+[node name="Tree20" parent="Y_Sorted_Sprites/Trees" unique_id=1738146229 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(923, 160)
+
+[node name="Tree21" parent="Y_Sorted_Sprites/Trees" unique_id=443019998 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(879, 387)
+
+[node name="Tree22" parent="Y_Sorted_Sprites/Trees" unique_id=1357453924 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(943, 477)
+
+[node name="Tree23" parent="Y_Sorted_Sprites/Trees" unique_id=533911612 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(727, 581)
+
+[node name="Tree24" parent="Y_Sorted_Sprites/Trees" unique_id=1932111238 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(656, 624)
+
+[node name="Tree25" parent="Y_Sorted_Sprites/Trees" unique_id=630050294 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(867, 629)
+
+[node name="Tree26" parent="Y_Sorted_Sprites/Trees" unique_id=2033059465 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(518, 23)
+
+[node name="Tree27" parent="Y_Sorted_Sprites/Trees" unique_id=882450781 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(469, 49)
+
+[node name="Tree28" parent="Y_Sorted_Sprites/Trees" unique_id=788251660 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(392, 29)
+
+[node name="Tree29" parent="Y_Sorted_Sprites/Trees" unique_id=230981035 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(429, 64)
+
+[node name="Tree30" parent="Y_Sorted_Sprites/Trees" unique_id=1373979269 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(759, 23)
+
+[node name="Tree31" parent="Y_Sorted_Sprites/Trees" unique_id=906173868 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(795, 43)
+
+[node name="Tree32" parent="Y_Sorted_Sprites/Trees" unique_id=1107556997 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(833, 26)
+
+[node name="Tree33" parent="Y_Sorted_Sprites/Trees" unique_id=705321756 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(922, 18)
+
+[node name="Tree34" parent="Y_Sorted_Sprites/Trees" unique_id=1258416793 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(873, 174)
+
+[node name="Tree35" parent="Y_Sorted_Sprites/Trees" unique_id=652646495 instance=ExtResource("8_um320")]
+y_sort_enabled = true
+position = Vector2(884, 128)
+
+[node name="Logs" type="Node2D" parent="Y_Sorted_Sprites" unique_id=1506286307]
+y_sort_enabled = true
+
+[node name="Log1" parent="Y_Sorted_Sprites/Logs" unique_id=95831242 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(692, 13)
+
+[node name="Log12" parent="Y_Sorted_Sprites/Logs" unique_id=2068502030 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(530, 409)
+
+[node name="Log13" parent="Y_Sorted_Sprites/Logs" unique_id=998509085 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(677, 451)
+
+[node name="Log2" parent="Y_Sorted_Sprites/Logs" unique_id=1447729362 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(408, 85)
+
+[node name="Log3" parent="Y_Sorted_Sprites/Logs" unique_id=1139763640 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(388, 215)
+
+[node name="Log4" parent="Y_Sorted_Sprites/Logs" unique_id=206891489 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(338, 250)
+
+[node name="Log5" parent="Y_Sorted_Sprites/Logs" unique_id=1831152249 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(67, 76)
+
+[node name="Log6" parent="Y_Sorted_Sprites/Logs" unique_id=1768554716 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(65, 591)
+
+[node name="Log7" parent="Y_Sorted_Sprites/Logs" unique_id=28375753 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(985, 622)
+
+[node name="Log8" parent="Y_Sorted_Sprites/Logs" unique_id=891849859 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(1078, 571)
+
+[node name="Log9" parent="Y_Sorted_Sprites/Logs" unique_id=1109119053 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(1016, 420)
+
+[node name="Log10" parent="Y_Sorted_Sprites/Logs" unique_id=630758675 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(1087, 86)
+
+[node name="Log11" parent="Y_Sorted_Sprites/Logs" unique_id=1925400183 instance=ExtResource("9_glw47")]
+y_sort_enabled = true
+position = Vector2(1069, 181)
+
+[node name="Stones" type="Node2D" parent="Y_Sorted_Sprites" unique_id=185710057]
+y_sort_enabled = true
+
+[node name="Witches" type="Node2D" parent="Y_Sorted_Sprites" unique_id=1659849098]
+y_sort_enabled = true
+
+[node name="Witch" parent="Y_Sorted_Sprites/Witches" unique_id=2028683889 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(693.99994, 194)
+
+[node name="Witch2" parent="Y_Sorted_Sprites/Witches" unique_id=1206146996 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(490, 193.99998)
+
+[node name="Witch3" parent="Y_Sorted_Sprites/Witches" unique_id=1391576847 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(849, 201)
+
+[node name="Witch6" parent="Y_Sorted_Sprites/Witches" unique_id=529027234 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(797.99994, 198)
+
+[node name="Witch7" parent="Y_Sorted_Sprites/Witches" unique_id=2123763751 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(765.99994, 237)
+
+[node name="Witch10" parent="Y_Sorted_Sprites/Witches" unique_id=710166406 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(1011, 326)
+
+[node name="Witch11" parent="Y_Sorted_Sprites/Witches" unique_id=605801836 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(946, 376)
+
+[node name="Witch12" parent="Y_Sorted_Sprites/Witches" unique_id=1566062538 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(370, 170)
+
+[node name="Witch16" parent="Y_Sorted_Sprites/Witches" unique_id=575264032 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(308, 288)
+
+[node name="Witch17" parent="Y_Sorted_Sprites/Witches" unique_id=842306054 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(34, 340)
+
+[node name="Witch18" parent="Y_Sorted_Sprites/Witches" unique_id=365121700 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(48, 531)
+
+[node name="Witch19" parent="Y_Sorted_Sprites/Witches" unique_id=2004528994 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(1014, 519)
+
+[node name="Witch20" parent="Y_Sorted_Sprites/Witches" unique_id=2115970504 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(1130, 581)
+
+[node name="Witch21" parent="Y_Sorted_Sprites/Witches" unique_id=616476566 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(1012, 95)
+
+[node name="Witch22" parent="Y_Sorted_Sprites/Witches" unique_id=1946787723 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(1080, 233)
+
+[node name="Witch23" parent="Y_Sorted_Sprites/Witches" unique_id=1105800458 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(365, 520)
+
+[node name="Witch24" parent="Y_Sorted_Sprites/Witches" unique_id=1966636745 instance=ExtResource("4_um320")]
+y_sort_enabled = true
+position = Vector2(868, 463)
+
+[connection signal="lose_game" from="Y_Sorted_Sprites/Player" to="." method="_on_player_lose_game"]
