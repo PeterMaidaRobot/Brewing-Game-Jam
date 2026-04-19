@@ -4,6 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_p8wlm"]
 [ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_7i1al"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_tndkc"]
+[ext_resource type="PackedScene" uid="uid://dxbl403mbroyc" path="res://scenes/tree1.tscn" id="3_ty81x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ty81x"]
+size = Vector2(198, 210)
 
 [node name="Intro" type="Node" unique_id=1785083420]
 
@@ -11,36 +15,65 @@
 position = Vector2(576, 324)
 texture = ExtResource("1_egpjd")
 
-[node name="Logs" type="Node" parent="." unique_id=198295894]
+[node name="YSortedSprites" type="Node2D" parent="." unique_id=829975525]
+y_sort_enabled = true
 
-[node name="Log11" parent="Logs" unique_id=1455937461 instance=ExtResource("1_p8wlm")]
+[node name="Logs" type="Node2D" parent="YSortedSprites" unique_id=1647442839]
+y_sort_enabled = true
+
+[node name="Log11" parent="YSortedSprites/Logs" unique_id=1455937461 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(776, 234)
 
-[node name="Log16" parent="Logs" unique_id=1338332316 instance=ExtResource("1_p8wlm")]
+[node name="Log16" parent="YSortedSprites/Logs" unique_id=1338332316 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(718, 234)
 
-[node name="Log12" parent="Logs" unique_id=962036938 instance=ExtResource("1_p8wlm")]
+[node name="Log12" parent="YSortedSprites/Logs" unique_id=962036938 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(833, 234)
 
-[node name="Log13" parent="Logs" unique_id=1344782813 instance=ExtResource("1_p8wlm")]
+[node name="Log13" parent="YSortedSprites/Logs" unique_id=1344782813 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(891, 235)
 
-[node name="Log14" parent="Logs" unique_id=190615460 instance=ExtResource("1_p8wlm")]
+[node name="Log14" parent="YSortedSprites/Logs" unique_id=190615460 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(948, 235)
 
-[node name="Log15" parent="Logs" unique_id=2073202915 instance=ExtResource("1_p8wlm")]
+[node name="Log15" parent="YSortedSprites/Logs" unique_id=2073202915 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(1003, 235)
 
-[node name="Log17" parent="Logs" unique_id=593887955 instance=ExtResource("1_p8wlm")]
+[node name="Log17" parent="YSortedSprites/Logs" unique_id=593887955 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(1058, 235)
 
-[node name="Log18" parent="Logs" unique_id=1383238666 instance=ExtResource("1_p8wlm")]
+[node name="Log18" parent="YSortedSprites/Logs" unique_id=1383238666 instance=ExtResource("1_p8wlm")]
+y_sort_enabled = true
 position = Vector2(1118, 235)
+
+[node name="Tree1" parent="YSortedSprites/Logs" unique_id=1624868308 instance=ExtResource("3_ty81x")]
+y_sort_enabled = true
+position = Vector2(840, 402)
+
+[node name="Player" parent="YSortedSprites" unique_id=1573098926 instance=ExtResource("3_tndkc")]
+y_sort_enabled = true
+position = Vector2(638, 535)
 
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_7i1al")]
 position = Vector2(569.00006, 29)
 scale = Vector2(5.8819265, 2.8393373)
 next_level_num = 1
 
-[node name="Player" parent="." unique_id=1573098926 instance=ExtResource("3_tndkc")]
-position = Vector2(638, 535)
+[node name="River" type="StaticBody2D" parent="." unique_id=2139796752]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="River" unique_id=1411322006]
+position = Vector2(25, -3)
+polygon = PackedVector2Array(246, 266, 182, 421, 45, 618, -35, 633, -23, 490, 72, 310, 96, 135, 134, 3, 344, 3)
+
+[node name="House" type="StaticBody2D" parent="." unique_id=2046843803]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="House" unique_id=689594799]
+position = Vector2(465, 460)
+shape = SubResource("RectangleShape2D_ty81x")

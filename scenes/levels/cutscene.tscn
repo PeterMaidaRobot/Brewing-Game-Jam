@@ -100,16 +100,8 @@ texture = ExtResource("15_q6gjd")
 
 [node name="ContinueLabel" type="Label" parent="." unique_id=1913046928]
 offset_left = 943.0
-offset_top = 606.0
-offset_right = 1126.0
-offset_bottom = 629.0
+offset_top = 600.0
+offset_right = 1130.0
+offset_bottom = 623.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Press space to continue"
-
-[node name="SpaceLabel" type="Label" parent="." unique_id=676188685]
-offset_left = 963.0
-offset_top = 575.0
-offset_right = 1120.0
-offset_bottom = 598.0
-theme_override_colors/font_color = Color(0.072842635, 0.072842635, 0.072842635, 1)
-text = "SPACE"
+text = "Press SPACE to continue"

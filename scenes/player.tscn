@@ -15,10 +15,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sh265"]
-size = Vector2(23, 42)
+size = Vector2(23, 14.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
-size = Vector2(23.076027, 44)
+size = Vector2(18.561152, 28)
 
 [node name="Player" type="CharacterBody2D" unique_id=1573098926]
 scale = Vector2(2, 2)
@@ -31,7 +31,7 @@ sprite_frames = SubResource("SpriteFrames_onrkg")
 animation = &"stand"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=908861233]
-position = Vector2(-1.5, -5)
+position = Vector2(-1.5, 8.75)
 shape = SubResource("RectangleShape2D_sh265")
 
 [node name="SmokeHitbox" type="Area2D" parent="." unique_id=346136574]
@@ -40,7 +40,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SmokeHitbox" unique_id=1127072397]
-position = Vector2(-1.5049595, -6)
+position = Vector2(-1.7557847, -3.5)
 shape = SubResource("RectangleShape2D_i3pqv")
 debug_color = Color(0.88769287, 0.00028243125, 0.8027765, 0.41960785)
 
