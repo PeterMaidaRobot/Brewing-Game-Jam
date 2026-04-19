@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dmnkgb0sy820t"]
 
+[ext_resource type="Script" uid="uid://b57rl8ekxa6j1" path="res://scripts/levels/level.gd" id="1_5vn0v"]
 [ext_resource type="PackedScene" uid="uid://bi6trsfuwy02x" path="res://scenes/log.tscn" id="1_rej77"]
 [ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="2_5vn0v"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_ts8eg"]
@@ -7,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_glw47"]
 [ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_4wsov"]
 
-[node name="Level4" type="Node" unique_id=1244656757]
+[node name="Level4" type="Node" unique_id=1804240899]
+script = ExtResource("1_5vn0v")
+metadata/_custom_type_script = "uid://b57rl8ekxa6j1"
 
 [node name="Background" type="ColorRect" parent="." unique_id=1048212525]
 anchors_preset = 15
@@ -65,7 +68,7 @@ position = Vector2(738, 259)
 
 [node name="Fan" parent="." unique_id=151114730 instance=ExtResource("5_glw47")]
 position = Vector2(433.99997, 406)
-rotation = 4.712389
+rotation = -1.5707964
 scale = Vector2(1.233, 1.234)
 child_breeze_dir = Vector2(-1, 0)
 
@@ -80,3 +83,5 @@ position = Vector2(269, 301)
 
 [node name="Cauldron3" parent="." unique_id=1092185950 instance=ExtResource("6_4wsov")]
 position = Vector2(373, 303)
+
+[connection signal="lose_game" from="Player" to="." method="_on_player_lose_game"]

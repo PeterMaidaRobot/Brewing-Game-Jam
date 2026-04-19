@@ -22,7 +22,7 @@ texture = ExtResource("2_3p04p")
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_8qukl")]
 position = Vector2(569, 30)
 scale = Vector2(5.8819265, 2.8393373)
-next_level_num = 99
+next_level_num = 3
 
 [node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=618787090]
 y_sort_enabled = true
@@ -343,6 +343,10 @@ position = Vector2(565, 614)
 [node name="Witch" parent="Y_Sorted_Sprites" unique_id=2028683889 instance=ExtResource("4_qsp8v")]
 y_sort_enabled = true
 position = Vector2(354, 232.99997)
+
+[node name="Witch2" parent="Y_Sorted_Sprites" unique_id=975082900 instance=ExtResource("4_qsp8v")]
+y_sort_enabled = true
+position = Vector2(804, 193)
 
 [node name="Fan" parent="Y_Sorted_Sprites" unique_id=151114730 instance=ExtResource("5_nt80m")]
 y_sort_enabled = true

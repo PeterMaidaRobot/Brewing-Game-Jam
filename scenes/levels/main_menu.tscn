@@ -49,7 +49,6 @@ grow_vertical = 2
 text = "Level Select"
 
 [node name="LevelScreen" type="Control" parent="." unique_id=1666513167]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -73,9 +72,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -317.0
+offset_left = -180.0
 offset_top = -37.0
-offset_right = -255.0
+offset_right = -118.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -88,33 +87,65 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -230.0
+offset_left = -93.0
 offset_top = -36.0
-offset_right = -168.0
+offset_right = -31.0
 offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 2
 text = "Level 2"
 
+[node name="Level3Button" type="Button" parent="LevelScreen" unique_id=1526284181]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -36.0
+offset_right = 50.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 3"
+
+[node name="Level4Button" type="Button" parent="LevelScreen" unique_id=198095792]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = -36.0
+offset_right = 129.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Level 4"
+
 [node name="IntroButton" type="Button" parent="LevelScreen" unique_id=1730304502]
 layout_mode = 0
-offset_left = 177.0
-offset_top = 287.0
-offset_right = 224.0
-offset_bottom = 318.0
+offset_left = 334.0
+offset_top = 286.0
+offset_right = 381.0
+offset_bottom = 317.0
 text = "Intro"
 
 [node name="FinaleButton" type="Button" parent="LevelScreen" unique_id=864538070]
 layout_mode = 0
 offset_left = 724.0
-offset_top = 285.0
+offset_top = 288.0
 offset_right = 779.0
-offset_bottom = 316.0
+offset_bottom = 319.0
 text = "Finale"
 
 [connection signal="pressed" from="MenuScreen/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuScreen/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="LevelScreen/Level1Button" to="." method="_on_level_button_pressed" binds= [1]]
 [connection signal="pressed" from="LevelScreen/Level2Button" to="." method="_on_level_button_pressed" binds= [2]]
+[connection signal="pressed" from="LevelScreen/Level3Button" to="." method="_on_level_button_pressed" binds= [3]]
+[connection signal="pressed" from="LevelScreen/Level4Button" to="." method="_on_level_button_pressed" binds= [4]]
 [connection signal="pressed" from="LevelScreen/IntroButton" to="." method="_on_level_button_pressed" binds= [0]]
 [connection signal="pressed" from="LevelScreen/FinaleButton" to="." method="_on_level_button_pressed" binds= [99]]
