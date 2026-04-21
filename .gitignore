@@ -8,3 +8,6 @@
 
 # Ignore my Godot builds folder
 builds/*
+
+# Ignore tmp files that Godot might make on bad save attempts
+*tmp
