@@ -10,12 +10,11 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
-		print("Goal!")
 		win_game.emit()
-		get_tree().change_scene_to_file(Constants.LEVEL_SCENE_PATH[next_level_num])
+		get_tree().change_scene_to_file.call_deferred(Constants.LEVEL_SCENE_PATH[next_level_num])

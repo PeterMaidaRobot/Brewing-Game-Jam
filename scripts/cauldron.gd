@@ -8,29 +8,29 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:	
+func _process(_delta: float) -> void:	
 	pass
 
 
 # Create a circle around the cauldron with
-# a distinct range away, given some variation further away
+# a distinct radius range away, given some variation further away
 # the desired number of smoke particles in the ring
-func create_smoke_ring(range : float, count : int, variation : float, init_strength : int) -> void:
+func create_smoke_ring(radius : float, count : int, variation : float, init_strength : int) -> void:
 	for i in range(count):
 	
 		# Create a new instance of the Smoke Scene
 		var smoke : Node = smoke_scene.instantiate()
 		
 		# Grab the static point location to spawn from
-		var smoke_spawn_location = $SmokeSpawnLocation
+		var smoke_spawn_location : Marker2D = $SmokeSpawnLocation
 		
 		# Set the smoke's direction prependicular to the path direction.
 		var direction : float = smoke_spawn_location.rotation
 		# Rotate the point so it will cover the full 360 degrees
 		smoke_spawn_location.rotation += (2 * PI / count)
 		
-		# Create the ring at the desired range away, giving some randomness variation
-		var layer : float = range + randf_range(0.0, variation)
+		# Create the ring at the desired radius away, giving some randomness variation
+		var layer : float = radius + randf_range(0.0, variation)
 		smoke.position = smoke_spawn_location.position + Vector2(layer, layer).rotated(direction)
 		
 		# Add some randomness to the direction.
@@ -38,7 +38,7 @@ func create_smoke_ring(range : float, count : int, variation : float, init_stren
 		smoke.rotation = direction
 		
 		# Choose the velocity for the mob.
-		var ring_smoke_velocity : int = 10.0
+		var ring_smoke_velocity : float = 10.0
 		var velocity : Vector2 = Vector2(ring_smoke_velocity, ring_smoke_velocity)
 		smoke.linear_velocity = velocity.rotated(direction)
 		
@@ -61,7 +61,7 @@ func _on_smoke_timer_timeout() -> void:
 	var smoke : Node = smoke_scene.instantiate()
 	
 	# Continue the circle along the Path2D at an interval, it will reset to zero once it goes over 1
-	var smoke_spawn_location = $SmokePath/SmokeSpawnLocation
+	var smoke_spawn_location : PathFollow2D = $SmokePath/SmokeSpawnLocation
 	smoke_spawn_location.progress_ratio = smoke_spawn_location.progress_ratio + 0.1
 	
 	# Set the mob's position to the location
@@ -75,7 +75,7 @@ func _on_smoke_timer_timeout() -> void:
 	smoke.rotation = direction
 	
 	# Choose the velocity for the mob.
-	var smoke_velocity : int = 10.0
+	var smoke_velocity : float = 10.0
 	var velocity : Vector2 = Vector2(randf_range(smoke_velocity - 5.0, smoke_velocity), smoke_velocity)
 	smoke.linear_velocity = velocity.rotated(direction)
 	

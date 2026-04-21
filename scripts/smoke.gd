@@ -13,7 +13,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	linear_velocity += fan_direction # TODO it's bad to set linear_velocity every frame apparently... need forces instead
 
 	strength -= 1

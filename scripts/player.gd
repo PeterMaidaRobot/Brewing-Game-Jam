@@ -16,31 +16,30 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var velocity : Vector2 = Vector2.ZERO
+	var new_velocity : Vector2 = Vector2.ZERO
 	if accept_input:
 		if Input.is_action_pressed("move_right"):
-			velocity.x += 1
+			new_velocity.x += 1
 			$AnimatedSprite2D.animation = "walk_right"
 			$AnimatedSprite2D.flip_h = false
 		if Input.is_action_pressed("move_left"):
-			velocity.x -= 1
+			new_velocity.x -= 1
 			$AnimatedSprite2D.animation = "walk_right"
 			$AnimatedSprite2D.flip_h = true
 		if Input.is_action_pressed("move_down"):
-			velocity.y += 1
+			new_velocity.y += 1
 			$AnimatedSprite2D.animation = "walk_down"
 		if Input.is_action_pressed("move_up"):
-			velocity.y -= 1
+			new_velocity.y -= 1
 			$AnimatedSprite2D.animation = "walk_up"
 		
-		if velocity.length() > 0:
-			velocity = velocity.normalized() * speed
+		if new_velocity.length() > 0:
+			new_velocity = new_velocity.normalized() * speed
+			position += new_velocity * delta
+			position = position.clamp(Vector2.ZERO, screen_size)
 			$AnimatedSprite2D.play()
 		else:
 			$AnimatedSprite2D.stop()
-
-		position += velocity * delta
-		position = position.clamp(Vector2.ZERO, screen_size)
 		
 		move_and_slide()
 
