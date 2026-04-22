@@ -19,23 +19,20 @@ grow_vertical = 2
 position = Vector2(576, 324)
 texture = ExtResource("2_leamy")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MenuScreen" unique_id=801924495]
+[node name="NewGameButton" type="Button" parent="MenuScreen" unique_id=531183831]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -97.5
-offset_top = -50.0
-offset_right = 97.5
-offset_bottom = 50.0
+offset_left = -97.0
+offset_top = -77.0
+offset_right = 98.0
+offset_bottom = -29.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 30
-
-[node name="NewGameButton" type="Button" parent="MenuScreen/VBoxContainer" unique_id=531183831]
-layout_mode = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 focus_next = NodePath("../LevelSelectButton")
 focus_previous = NodePath("../LevelSelectButton")
 mouse_default_cursor_shape = 2
@@ -45,8 +42,14 @@ theme_override_font_sizes/font_size = 32
 text = "New Game"
 flat = true
 
-[node name="LevelSelectButton" type="Button" parent="MenuScreen/VBoxContainer" unique_id=365482663]
-layout_mode = 2
+[node name="LevelSelectButton" type="Button" parent="MenuScreen" unique_id=365482663]
+auto_translate_mode = 2
+layout_mode = 0
+offset_left = 479.0
+offset_top = 356.0
+offset_right = 674.0
+offset_bottom = 404.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
 focus_next = NodePath("../NewGameButton")
 focus_previous = NodePath("../NewGameButton")
 mouse_default_cursor_shape = 2
@@ -57,6 +60,7 @@ text = "Level Select"
 flat = true
 
 [node name="LevelScreen" type="Control" parent="." unique_id=1666513167]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -79,69 +83,97 @@ offset_left = 71.0
 offset_top = 46.0
 offset_right = 142.0
 offset_bottom = 91.0
-focus_next = NodePath("../HBoxContainer/IntroButton")
-focus_previous = NodePath("../HBoxContainer/FinaleButton")
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../IntroButton")
+focus_previous = NodePath("../FinaleButton")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Back"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="LevelScreen" unique_id=58123405]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -189.0
-offset_top = -20.0
-offset_right = 189.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 15
-
-[node name="IntroButton" type="Button" parent="LevelScreen/HBoxContainer" unique_id=1730304502]
-layout_mode = 2
+[node name="IntroButton" type="Button" parent="LevelScreen" unique_id=1730304502]
+layout_mode = 0
+offset_left = 359.5
+offset_top = 304.0
+offset_right = 411.5
+offset_bottom = 344.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../Level1Button")
+focus_previous = NodePath("../BackButton")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Intro"
 
-[node name="Level1Button" type="Button" parent="LevelScreen/HBoxContainer" unique_id=1203191206]
-layout_mode = 2
+[node name="Level1Button" type="Button" parent="LevelScreen" unique_id=1203191206]
+layout_mode = 0
+offset_left = 426.5
+offset_top = 304.0
+offset_right = 486.5
+offset_bottom = 344.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../Level2Button")
+focus_previous = NodePath("../IntroButton")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Level 1"
 
-[node name="Level2Button" type="Button" parent="LevelScreen/HBoxContainer" unique_id=37050436]
-layout_mode = 2
+[node name="Level2Button" type="Button" parent="LevelScreen" unique_id=37050436]
+layout_mode = 0
+offset_left = 501.5
+offset_top = 304.0
+offset_right = 564.5
+offset_bottom = 344.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../Level3Button")
+focus_previous = NodePath("../Level1Button")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Level 2"
 
-[node name="Level3Button" type="Button" parent="LevelScreen/HBoxContainer" unique_id=1526284181]
-layout_mode = 2
+[node name="Level3Button" type="Button" parent="LevelScreen" unique_id=1526284181]
+layout_mode = 0
+offset_left = 579.5
+offset_top = 304.0
+offset_right = 643.5
+offset_bottom = 344.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../Level4Button")
+focus_previous = NodePath("../Level2Button")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Level 3"
 
-[node name="Level4Button" type="Button" parent="LevelScreen/HBoxContainer" unique_id=198095792]
-layout_mode = 2
+[node name="Level4Button" type="Button" parent="LevelScreen" unique_id=198095792]
+layout_mode = 0
+offset_left = 658.5
+offset_top = 304.0
+offset_right = 722.5
+offset_bottom = 344.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../FinaleButton")
+focus_previous = NodePath("../Level3Button")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Level 4"
 
-[node name="FinaleButton" type="Button" parent="LevelScreen/HBoxContainer" unique_id=864538070]
-layout_mode = 2
+[node name="FinaleButton" type="Button" parent="LevelScreen" unique_id=864538070]
+layout_mode = 0
+offset_left = 737.5
+offset_top = 304.0
+offset_right = 792.5
+offset_bottom = 344.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+focus_next = NodePath("../BackButton")
+focus_previous = NodePath("../Level4Button")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Finale"
 
-[connection signal="pressed" from="MenuScreen/VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
-[connection signal="pressed" from="MenuScreen/VBoxContainer/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
+[connection signal="pressed" from="MenuScreen/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MenuScreen/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
 [connection signal="pressed" from="LevelScreen/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="LevelScreen/HBoxContainer/IntroButton" to="." method="_on_level_button_pressed" binds= [0]]
-[connection signal="pressed" from="LevelScreen/HBoxContainer/Level1Button" to="." method="_on_level_button_pressed" binds= [1]]
-[connection signal="pressed" from="LevelScreen/HBoxContainer/Level2Button" to="." method="_on_level_button_pressed" binds= [2]]
-[connection signal="pressed" from="LevelScreen/HBoxContainer/Level3Button" to="." method="_on_level_button_pressed" binds= [3]]
-[connection signal="pressed" from="LevelScreen/HBoxContainer/Level4Button" to="." method="_on_level_button_pressed" binds= [4]]
-[connection signal="pressed" from="LevelScreen/HBoxContainer/FinaleButton" to="." method="_on_level_button_pressed" binds= [99]]
+[connection signal="pressed" from="LevelScreen/IntroButton" to="." method="_on_level_button_pressed" binds= [0]]
+[connection signal="pressed" from="LevelScreen/Level1Button" to="." method="_on_level_button_pressed" binds= [1]]
+[connection signal="pressed" from="LevelScreen/Level2Button" to="." method="_on_level_button_pressed" binds= [2]]
+[connection signal="pressed" from="LevelScreen/Level3Button" to="." method="_on_level_button_pressed" binds= [3]]
+[connection signal="pressed" from="LevelScreen/Level4Button" to="." method="_on_level_button_pressed" binds= [4]]
+[connection signal="pressed" from="LevelScreen/FinaleButton" to="." method="_on_level_button_pressed" binds= [99]]

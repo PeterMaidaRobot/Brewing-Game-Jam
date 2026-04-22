@@ -3,24 +3,47 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Setup the callbacks
+	setup_buttons()
+	# Then show the main menu
 	show_main_menu()
 	
-	# Let the mouse also grab focus in addition to the keyboard
-	mouse_focuses_children($MenuScreen/VBoxContainer)
-	mouse_focuses_children($LevelScreen/HBoxContainer)
-	$LevelScreen/BackButton.mouse_entered.connect(func() -> void: $LevelScreen/BackButton.grab_focus())
+
+'''
+Initialize the callbacks to the menu buttons:
+	* Mouse entered -> get focus
+	* Focus gaines -> wiggle button
+'''
+func setup_buttons() -> void:
+	var buttons : Array[Button] = [
+		$MenuScreen/NewGameButton,
+		$MenuScreen/LevelSelectButton,
+		$LevelScreen/BackButton,
+		$LevelScreen/IntroButton,
+		$LevelScreen/Level1Button,
+		$LevelScreen/Level2Button,
+		$LevelScreen/Level3Button,
+		$LevelScreen/Level4Button,
+		$LevelScreen/FinaleButton,
+	]
+	for button : Button in buttons:
+		button.mouse_entered.connect(func() -> void: button.grab_focus())
+		button.focus_entered.connect(func() -> void: wiggle(button))
+
+
+func wiggle(node : Button) -> void:
+	var tween : Tween = create_tween()
+	tween.tween_property(node, "rotation", 0.2, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "rotation", -0.2, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "rotation", 0.1, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "rotation", 0, 0.2).set_trans(Tween.TRANS_SINE)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
 
-# This function will turn on the mouse entered event to focus each of the
-# children buttons in the provided vbox or hbox
-func mouse_focuses_children(container : Container) -> void:
-	for child in container.get_children():
-		if child is Button:
-			child.mouse_entered.connect(func() -> void: child.grab_focus())
 
 
 func show_main_menu() -> void:
@@ -29,13 +52,13 @@ func show_main_menu() -> void:
 	$LevelScreen.hide()
 	
 	# Grab focus to the NewGame button so the user can tab through
-	$MenuScreen/VBoxContainer/NewGameButton.grab_focus()
+	$MenuScreen/NewGameButton.grab_focus()
 	
 func show_level_select_menu() -> void:
 	$LevelScreen.show()
 	$MenuScreen.hide()
 	
-	$LevelScreen/BackButton.grab_focus()
+	$LevelScreen/IntroButton.grab_focus()
 	
 
 
