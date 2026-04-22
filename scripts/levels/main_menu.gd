@@ -29,7 +29,8 @@ func setup_buttons() -> void:
 	for button : Button in buttons:
 		button.mouse_entered.connect(func() -> void: button.grab_focus())
 		button.focus_entered.connect(func() -> void: wiggle(button))
-
+		button.focus_entered.connect(func() -> void: $MenuHoverSound.play())
+		button.pressed.connect(func() -> void: $MenuClickSound.play())
 
 func wiggle(node : Button) -> void:
 	var tween : Tween = create_tween()

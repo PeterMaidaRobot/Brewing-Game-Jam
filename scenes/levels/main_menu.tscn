@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://cjt80c570klo7" path="res://scripts/levels/main_menu.gd" id="1_fsby3"]
 [ext_resource type="Texture2D" uid="uid://ldqph2c5xwxw" path="res://art/main_menu.png" id="2_leamy"]
 [ext_resource type="FontFile" uid="uid://bptarglxropm6" path="res://fonts/MagicRed-lxwDV.ttf" id="3_721jg"]
+[ext_resource type="AudioStream" uid="uid://bdxqy5a3trx20" path="res://sound/menu_hover.mp3" id="4_geflf"]
+[ext_resource type="AudioStream" uid="uid://0r8savqw082y" path="res://sound/menu_click.mp3" id="5_fkd6t"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=572550495]
 script = ExtResource("1_fsby3")
@@ -167,6 +169,15 @@ focus_previous = NodePath("../Level4Button")
 mouse_default_cursor_shape = 2
 theme_override_fonts/font = ExtResource("3_721jg")
 text = "Finale"
+
+[node name="MenuHoverSound" type="AudioStreamPlayer" parent="." unique_id=727734446]
+stream = ExtResource("4_geflf")
+volume_db = -12.0
+pitch_scale = 0.8
+
+[node name="MenuClickSound" type="AudioStreamPlayer" parent="." unique_id=948079285]
+stream = ExtResource("5_fkd6t")
+volume_db = -30.0
 
 [connection signal="pressed" from="MenuScreen/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuScreen/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
