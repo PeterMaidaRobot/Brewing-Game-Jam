@@ -1,9 +1,25 @@
 extends StaticBody2D
 
-@export var smoke_scene : PackedScene
+@export var green_smoke_scene : PackedScene
+@export var blue_smoke_scene : PackedScene
+@export var yellow_smoke_scene : PackedScene
+
+enum Smoke_Type {Green, Blue, Yellow}
+@export var smoke_type : Smoke_Type
+
+var smoke_scene : PackedScene
+
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	match smoke_type:
+		Smoke_Type.Green:
+			smoke_scene = green_smoke_scene
+		Smoke_Type.Blue:
+			smoke_scene = blue_smoke_scene
+		Smoke_Type.Yellow:
+			smoke_scene = yellow_smoke_scene
 	create_initial_smoke_cloud()
 
 

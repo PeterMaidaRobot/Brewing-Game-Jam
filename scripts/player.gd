@@ -45,7 +45,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_smoke_hitbox_body_entered(body: Node2D) -> void:	
-	if body is Smoke:
+	if body is GreenSmoke:
 		# Only allow the stronger smoke to kill you to be more forgiving on loss
 		var smoke : Smoke = body as Smoke
 		if smoke.strength > 100:

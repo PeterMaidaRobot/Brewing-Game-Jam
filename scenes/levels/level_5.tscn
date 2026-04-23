@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://cu3e5pmrjr8fb"]
+
+[ext_resource type="Script" uid="uid://cdif22pt71x2q" path="res://scenes/levels/level_5.gd" id="1_mxx4w"]
+[ext_resource type="Texture2D" uid="uid://bc4mon8a3po31" path="res://art/level_background.png" id="2_fsnos"]
+[ext_resource type="PackedScene" uid="uid://bh7itprriigm0" path="res://scenes/goal.tscn" id="3_mxx4w"]
+[ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="4_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://bv4qqayneihhw" path="res://scenes/fan.tscn" id="5_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://dsiq3lr1rgl53" path="res://scenes/cauldron.tscn" id="6_dwyms"]
+[ext_resource type="PackedScene" uid="uid://c5cvitjvqa1u0" path="res://scenes/green_smoke.tscn" id="7_mxx4w"]
+[ext_resource type="PackedScene" uid="uid://b4i0a3t8k25dv" path="res://scenes/yellow_smoke.tscn" id="7_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://didmea1s1mxet" path="res://scenes/blue_smoke.tscn" id="8_vvoq0"]
+
+[node name="Level5" type="Node" unique_id=691880778]
+script = ExtResource("1_mxx4w")
+metadata/_custom_type_script = "uid://b57rl8ekxa6j1"
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1220487302]
+position = Vector2(578, 324)
+texture = ExtResource("2_fsnos")
+
+[node name="Goal" parent="." unique_id=573352576 instance=ExtResource("3_mxx4w")]
+position = Vector2(591, 28)
+scale = Vector2(5.8819265, 2.8393373)
+next_level_num = 99
+
+[node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=1252630077]
+y_sort_enabled = true
+
+[node name="Player" parent="Y_Sorted_Sprites" unique_id=1573098926 instance=ExtResource("4_vvoq0")]
+y_sort_enabled = true
+position = Vector2(544, 610)
+
+[node name="Fan" parent="Y_Sorted_Sprites" unique_id=151114730 instance=ExtResource("5_tqnj0")]
+y_sort_enabled = true
+position = Vector2(814, 292)
+rotation = -1.5707964
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(-1, 0)
+
+[node name="Fan2" parent="Y_Sorted_Sprites" unique_id=353983715 instance=ExtResource("5_tqnj0")]
+y_sort_enabled = true
+position = Vector2(362, 292.00003)
+rotation = 1.5707964
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(1, 0)
+
+[node name="Cauldron2" parent="Y_Sorted_Sprites" unique_id=1046902203 instance=ExtResource("6_dwyms")]
+y_sort_enabled = true
+position = Vector2(510, 223)
+
+[node name="Cauldron4" parent="Y_Sorted_Sprites" unique_id=1488576381 instance=ExtResource("6_dwyms")]
+y_sort_enabled = true
+position = Vector2(855, 512)
+smoke_type = 1
+
+[node name="Cauldron3" parent="Y_Sorted_Sprites" unique_id=1879012879 instance=ExtResource("6_dwyms")]
+y_sort_enabled = true
+position = Vector2(667, 224)
+
+[node name="Cauldron5" parent="Y_Sorted_Sprites" unique_id=328446438 instance=ExtResource("6_dwyms")]
+y_sort_enabled = true
+position = Vector2(380, 511)
+yellow_smoke_scene = ExtResource("7_vvoq0")
+smoke_type = 2
+
+[node name="Fan3" parent="Y_Sorted_Sprites" unique_id=1883046634 instance=ExtResource("5_tqnj0")]
+y_sort_enabled = true
+position = Vector2(632, 319)
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
+
+[node name="Fan4" parent="Y_Sorted_Sprites" unique_id=491876723 instance=ExtResource("5_tqnj0")]
+y_sort_enabled = true
+position = Vector2(542, 319.99997)
+scale = Vector2(1.233, 1.234)
+child_breeze_dir = Vector2(0, -1)
+
+[node name="GreenSmoke" parent="Y_Sorted_Sprites" unique_id=1286601485 instance=ExtResource("7_mxx4w")]
+position = Vector2(698, 575)
+
+[node name="BlueSmoke" parent="Y_Sorted_Sprites" unique_id=14061291 instance=ExtResource("8_vvoq0")]
+position = Vector2(701, 490)
+
+[connection signal="lose_game" from="Y_Sorted_Sprites/Player" to="." method="_on_player_lose_game"]

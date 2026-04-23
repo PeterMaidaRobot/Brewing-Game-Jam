@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c5cvitjvqa1u0"]
 
-[ext_resource type="Script" uid="uid://b6owjhxblsu0s" path="res://scripts/smoke.gd" id="1_rx0m8"]
-[ext_resource type="Texture2D" uid="uid://26efekymsrec" path="res://art/green_smoke.png" id="2_rx0m8"]
+[ext_resource type="Script" uid="uid://dalw7wh4gv1im" path="res://scenes/green_smoke.gd" id="1_soapr"]
+[ext_resource type="Texture2D" uid="uid://26efekymsrec" path="res://art/green_smoke.png" id="2_4mkwg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ca0x4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_rx0m8")
+"texture": ExtResource("2_4mkwg")
 }],
 "loop": true,
 "name": &"default",
@@ -16,11 +16,11 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o88gx"]
 
-[node name="smoke" type="RigidBody2D" unique_id=1286601485 groups=["Smoke"]]
+[node name="GreenSmoke" type="RigidBody2D" unique_id=1286601485 groups=["Smoke"]]
 collision_layer = 2
 collision_mask = 0
 gravity_scale = 0.0
-script = ExtResource("1_rx0m8")
+script = ExtResource("1_soapr")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=498977987]
