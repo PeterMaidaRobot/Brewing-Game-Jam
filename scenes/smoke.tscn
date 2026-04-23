@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://c5cvitjvqa1u0"]
 
 [ext_resource type="Script" uid="uid://b6owjhxblsu0s" path="res://scripts/smoke.gd" id="1_rx0m8"]
-[ext_resource type="Texture2D" uid="uid://26efekymsrec" path="res://art/smoke_v2.png" id="2_y4cvb"]
+[ext_resource type="Texture2D" uid="uid://26efekymsrec" path="res://art/green_smoke.png" id="2_rx0m8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ca0x4"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_y4cvb")
+"texture": ExtResource("2_rx0m8")
 }],
 "loop": true,
 "name": &"default",
