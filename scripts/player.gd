@@ -16,26 +16,22 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	var new_velocity : Vector2 = Vector2.ZERO
 	if accept_input:
+		# Grab a normalized vector for the player's input
+		var direction : Vector2 = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 		if Input.is_action_pressed("move_right"):
-			new_velocity.x += 1
 			$AnimatedSprite2D.animation = "walk_right"
 			$AnimatedSprite2D.flip_h = false
 		if Input.is_action_pressed("move_left"):
-			new_velocity.x -= 1
 			$AnimatedSprite2D.animation = "walk_right"
 			$AnimatedSprite2D.flip_h = true
 		if Input.is_action_pressed("move_down"):
-			new_velocity.y += 1
 			$AnimatedSprite2D.animation = "walk_down"
 		if Input.is_action_pressed("move_up"):
-			new_velocity.y -= 1
 			$AnimatedSprite2D.animation = "walk_up"
 		
-		if new_velocity.length() > 0:
-			new_velocity = new_velocity.normalized() * speed
-			position += new_velocity * delta
+		if direction.length() > 0:
+			position += (direction * speed) * delta
 			position = position.clamp(Vector2.ZERO, screen_size)
 			$AnimatedSprite2D.play()
 		else:
