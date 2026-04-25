@@ -303,95 +303,78 @@ position = Vector2(81, 223)
 y_sort_enabled = true
 
 [node name="Stone1" parent="Y_Sorted_Sprites/Stones" unique_id=117641414 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(1036, 79)
 
+[node name="Stone24" parent="Y_Sorted_Sprites/Stones" unique_id=1570679292 instance=ExtResource("10_tqnj0")]
+position = Vector2(871, 295)
+
+[node name="Stone25" parent="Y_Sorted_Sprites/Stones" unique_id=1022159032 instance=ExtResource("10_tqnj0")]
+position = Vector2(847, 317)
+
 [node name="Stone17" parent="Y_Sorted_Sprites/Stones" unique_id=1250827164 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(791, 26)
 
 [node name="Stone18" parent="Y_Sorted_Sprites/Stones" unique_id=162722666 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(775, 37)
 
 [node name="Stone19" parent="Y_Sorted_Sprites/Stones" unique_id=1628631495 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(754, 28)
 
 [node name="Stone20" parent="Y_Sorted_Sprites/Stones" unique_id=1592229618 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(748, 45)
 
 [node name="Stone21" parent="Y_Sorted_Sprites/Stones" unique_id=418135033 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(693, 43)
 
 [node name="Stone22" parent="Y_Sorted_Sprites/Stones" unique_id=2138772260 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(678, 31)
 
 [node name="Stone23" parent="Y_Sorted_Sprites/Stones" unique_id=1183603123 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(687, 15)
 
 [node name="Stone2" parent="Y_Sorted_Sprites/Stones" unique_id=1963164105 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(443, 294)
 
 [node name="Stone3" parent="Y_Sorted_Sprites/Stones" unique_id=1661755390 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(293, 403)
 
 [node name="Stone4" parent="Y_Sorted_Sprites/Stones" unique_id=1778087378 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(497, 101)
 
 [node name="Stone5" parent="Y_Sorted_Sprites/Stones" unique_id=99514063 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(130, 45)
 
 [node name="Stone6" parent="Y_Sorted_Sprites/Stones" unique_id=145107842 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(84, 257)
 
 [node name="Stone7" parent="Y_Sorted_Sprites/Stones" unique_id=1675274592 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(35, 567)
 
 [node name="Stone8" parent="Y_Sorted_Sprites/Stones" unique_id=1963788006 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(423, 634)
 
 [node name="Stone9" parent="Y_Sorted_Sprites/Stones" unique_id=247599184 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(963, 619)
 
 [node name="Stone10" parent="Y_Sorted_Sprites/Stones" unique_id=1570371984 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(1061, 629)
 
 [node name="Stone11" parent="Y_Sorted_Sprites/Stones" unique_id=1005574916 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(863, 434)
 
 [node name="Stone12" parent="Y_Sorted_Sprites/Stones" unique_id=70952436 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(746, 436)
 
 [node name="Stone13" parent="Y_Sorted_Sprites/Stones" unique_id=478118471 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(619, 369)
 
 [node name="Stone14" parent="Y_Sorted_Sprites/Stones" unique_id=785767947 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(569, 334)
 
 [node name="Stone15" parent="Y_Sorted_Sprites/Stones" unique_id=912394823 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(524, 298)
 
 [node name="Stone16" parent="Y_Sorted_Sprites/Stones" unique_id=1628429653 instance=ExtResource("10_tqnj0")]
-y_sort_enabled = true
 position = Vector2(382, 256)
 
 [node name="Butterflies" type="Node2D" parent="Y_Sorted_Sprites" unique_id=825278973]
