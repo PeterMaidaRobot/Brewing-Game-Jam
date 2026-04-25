@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://didmea1s1mxet" path="res://scenes/blue_smoke.tscn" id="3_7mkqr"]
 [ext_resource type="Texture2D" uid="uid://cdghnlypa5fjg" path="res://art/cauldron.png" id="3_q3ljf"]
 [ext_resource type="PackedScene" uid="uid://bey0784xapumb" path="res://scenes/smoke_spawner_path.tscn" id="4_7mkqr"]
+[ext_resource type="PackedScene" uid="uid://b4i0a3t8k25dv" path="res://scenes/yellow_smoke.tscn" id="4_re3ld"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0t22i"]
 animations = [{
@@ -24,6 +25,7 @@ radius = 19.0
 script = ExtResource("1_0t22i")
 green_smoke_scene = ExtResource("2_au12p")
 blue_smoke_scene = ExtResource("3_7mkqr")
+yellow_smoke_scene = ExtResource("4_re3ld")
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=557946684]

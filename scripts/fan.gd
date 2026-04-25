@@ -28,11 +28,13 @@ func _process(_delta: float) -> void:
 			turn_off()
 
 func turn_on() -> void:
+	fan_on = true
 	$FanOnSprite.show()
 	$FanOffSprite.hide()
 	$Breeze.set_enabled(true)
 	
 func turn_off() -> void:
+	fan_on = false
 	$FanOnSprite.hide()
 	$FanOffSprite.show()
 	$Breeze.set_enabled(false)
@@ -49,3 +51,8 @@ func _on_interact_trigger_body_exited(body: Node2D) -> void:
 	if body is Player:
 		player_in_range = false
 		$InteractText.hide()
+
+
+func _on_yellow_smoke_trigger_body_entered(body: Node2D) -> void:
+	if body is YellowSmoke:
+		turn_on()

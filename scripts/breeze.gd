@@ -14,7 +14,7 @@ func _process(_delta: float) -> void:
 
 
 func set_enabled(on : bool) -> void:
-	$CollisionShape2D.disabled = !on
+	$CollisionShape2D.set_deferred("disabled", !on)
 	if on:
 		$TextureRect.show()
 	else:
