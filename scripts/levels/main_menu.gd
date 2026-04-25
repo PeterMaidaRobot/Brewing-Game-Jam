@@ -37,6 +37,9 @@ func wiggle(node : Button) -> void:
 	tween.tween_property(node, "rotation", 0.2, 0.2).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(node, "rotation", -0.2, 0.2).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(node, "rotation", 0.1, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "rotation", -0.1, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "rotation", 0.05, 0.2).set_trans(Tween.TRANS_SINE)
+	tween.tween_property(node, "rotation", -0.05, 0.2).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(node, "rotation", 0, 0.2).set_trans(Tween.TRANS_SINE)
 	
 
