@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bm82xtn4e2vki"]
+
+[ext_resource type="Script" uid="uid://b0kb0qkeasox4" path="res://scenes/butterfly.gd" id="1_0i5w8"]
+[ext_resource type="Texture2D" uid="uid://do5lyyjb0gkwe" path="res://art/butterfly_1.png" id="1_nm42i"]
+[ext_resource type="Texture2D" uid="uid://5nwx355ovytb" path="res://art/butterfly_2_6.png" id="2_0i5w8"]
+[ext_resource type="Texture2D" uid="uid://2wehjkaxykt" path="res://art/butterfly_3_5.png" id="3_s51m3"]
+[ext_resource type="Texture2D" uid="uid://c3v7yhv75he4k" path="res://art/butterfly_4.png" id="4_2144b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5h25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_nm42i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0i5w8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s51m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2144b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s51m3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_0i5w8")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w55qu"]
+size = Vector2(14, 10)
+
+[node name="Butterfly1" type="RigidBody2D" unique_id=46171859]
+collision_layer = 2
+collision_mask = 0
+gravity_scale = 0.0
+script = ExtResource("1_0i5w8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1278942213]
+sprite_frames = SubResource("SpriteFrames_m5h25")
+animation = &"fly"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1100653765]
+shape = SubResource("RectangleShape2D_w55qu")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1211118012]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

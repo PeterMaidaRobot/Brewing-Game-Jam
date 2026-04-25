@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ddve4y4m4xuvm" path="res://scenes/log1.tscn" id="8_tqnj0"]
 [ext_resource type="PackedScene" uid="uid://dpae641xakvmh" path="res://scenes/rock1.tscn" id="9_dwyms"]
 [ext_resource type="PackedScene" uid="uid://dssh2jb117enq" path="res://scenes/stone1.tscn" id="10_tqnj0"]
+[ext_resource type="PackedScene" uid="uid://bm82xtn4e2vki" path="res://scenes/butterfly_1.tscn" id="11_dwyms"]
 
 [node name="Level5" type="Node" unique_id=691880778]
 script = ExtResource("1_mxx4w")
@@ -28,7 +29,6 @@ next_level_num = 99
 y_sort_enabled = true
 
 [node name="Player" parent="Y_Sorted_Sprites" unique_id=1573098926 instance=ExtResource("4_vvoq0")]
-y_sort_enabled = true
 position = Vector2(616, 609)
 
 [node name="Fan" parent="Y_Sorted_Sprites" unique_id=353983715 instance=ExtResource("5_tqnj0")]
@@ -393,5 +393,28 @@ position = Vector2(524, 298)
 [node name="Stone16" parent="Y_Sorted_Sprites/Stones" unique_id=1628429653 instance=ExtResource("10_tqnj0")]
 y_sort_enabled = true
 position = Vector2(382, 256)
+
+[node name="Butterflies" type="Node2D" parent="Y_Sorted_Sprites" unique_id=825278973]
+y_sort_enabled = true
+
+[node name="Butterfly1" parent="Y_Sorted_Sprites/Butterflies" unique_id=46171859 instance=ExtResource("11_dwyms")]
+y_sort_enabled = true
+position = Vector2(952, 387)
+
+[node name="Butterfly2" parent="Y_Sorted_Sprites/Butterflies" unique_id=48759267 instance=ExtResource("11_dwyms")]
+y_sort_enabled = true
+position = Vector2(397, 316)
+
+[node name="Butterfly3" parent="Y_Sorted_Sprites/Butterflies" unique_id=861438718 instance=ExtResource("11_dwyms")]
+y_sort_enabled = true
+position = Vector2(167, 184)
+
+[node name="Butterfly4" parent="Y_Sorted_Sprites/Butterflies" unique_id=823238069 instance=ExtResource("11_dwyms")]
+y_sort_enabled = true
+position = Vector2(173, 420)
+
+[node name="Butterfly5" parent="Y_Sorted_Sprites/Butterflies" unique_id=460459079 instance=ExtResource("11_dwyms")]
+y_sort_enabled = true
+position = Vector2(671, 180)
 
 [connection signal="lose_game" from="Y_Sorted_Sprites/Player" to="." method="_on_player_lose_game"]

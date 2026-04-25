@@ -1,28 +1,25 @@
-class_name Smoke
 extends Airborne
+class_name Butterfly
 
-var strength : int = 750
 
-func init(_strength : int) -> void:
-	strength = _strength
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$AnimatedSprite2D.animation = "fly"
+	$AnimatedSprite2D.play()
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Call the process for Airbornes:
 	super._process(delta)
+	
+	if linear_velocity.length() < 10:
+		linear_velocity += Vector2(randf_range(-0.5, 0.5),
+								   randf_range(-0.5, 0.5))
 
-	strength -= 1
-	if strength < 200:
-		# Create an opacity tween to dim the alpha channel to 10% before we snap it out of existence
-		var tween : Tween = create_tween()
-		tween.tween_property(self, "modulate:a", 0.1, 5)
-	if strength <= 0:
-		queue_free()
+
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	# Free this memory once it leaves the screen

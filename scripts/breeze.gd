@@ -22,11 +22,11 @@ func set_enabled(on : bool) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
-	if body is Smoke:
-		var smoke : Smoke = body as Smoke
-		smoke.fan_direction += breeze_direction
+	if body is Airborne:
+		var airborne : Airborne = body as Airborne
+		airborne.fan_direction += breeze_direction
 		
 func _on_body_exited(body: Node2D) -> void:
-	if body is Smoke:
-		var smoke : Smoke = body as Smoke
-		smoke.fan_direction -= breeze_direction
+	if body is Airborne:
+		var airborne : Airborne = body as Airborne
+		airborne.fan_direction -= breeze_direction
