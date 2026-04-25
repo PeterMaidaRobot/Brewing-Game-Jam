@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c5cvitjvqa1u0" path="res://scenes/green_smoke.tscn" id="7_mxx4w"]
 [ext_resource type="PackedScene" uid="uid://b4i0a3t8k25dv" path="res://scenes/yellow_smoke.tscn" id="7_vvoq0"]
 [ext_resource type="PackedScene" uid="uid://didmea1s1mxet" path="res://scenes/blue_smoke.tscn" id="8_vvoq0"]
+[ext_resource type="PackedScene" uid="uid://bey0784xapumb" path="res://scenes/smoke_spawner_path.tscn" id="10_tqnj0"]
 
 [node name="Level5" type="Node" unique_id=691880778]
 script = ExtResource("1_mxx4w")
@@ -80,5 +81,9 @@ position = Vector2(698, 575)
 
 [node name="BlueSmoke" parent="Y_Sorted_Sprites" unique_id=14061291 instance=ExtResource("8_vvoq0")]
 position = Vector2(701, 490)
+
+[node name="SmokeSpawnerPath" parent="Y_Sorted_Sprites" unique_id=1799699859 instance=ExtResource("10_tqnj0")]
+position = Vector2(100, 186)
+smoke_type = 1
 
 [connection signal="lose_game" from="Y_Sorted_Sprites/Player" to="." method="_on_player_lose_game"]

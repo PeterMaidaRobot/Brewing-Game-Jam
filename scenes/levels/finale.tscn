@@ -3,12 +3,98 @@
 [ext_resource type="Script" uid="uid://cmybve3fxpwo6" path="res://scenes/levels/finale.gd" id="1_5faj0"]
 [ext_resource type="Texture2D" uid="uid://r7wlu0bdysju" path="res://art/finale_full.png" id="2_yxjb8"]
 [ext_resource type="PackedScene" uid="uid://d0mfjusp8jcmh" path="res://scenes/player.tscn" id="3_jn05g"]
+[ext_resource type="PackedScene" uid="uid://bey0784xapumb" path="res://scenes/smoke_spawner_path.tscn" id="4_320fo"]
 [ext_resource type="Texture2D" uid="uid://bi5n3t5qi4eb8" path="res://art/finale.png" id="5_5faj0"]
 [ext_resource type="PackedScene" uid="uid://cpk88frlr6ttg" path="res://scenes/berry_bush.tscn" id="5_52an8"]
 [ext_resource type="PackedScene" uid="uid://dssh2jb117enq" path="res://scenes/stone1.tscn" id="6_320fo"]
 [ext_resource type="PackedScene" uid="uid://dpae641xakvmh" path="res://scenes/rock1.tscn" id="7_1pgkr"]
 [ext_resource type="PackedScene" uid="uid://dxbl403mbroyc" path="res://scenes/tree1.tscn" id="8_o3ed0"]
 [ext_resource type="PackedScene" uid="uid://ddve4y4m4xuvm" path="res://scenes/log1.tscn" id="9_xq0sq"]
+
+[sub_resource type="Curve2D" id="Curve2D_320fo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -50, 2, 0, 0, 0, 0, 57, -6)
+}
+point_count = 2
+
+[sub_resource type="GDScript" id="GDScript_1pgkr"]
+script/source = "extends Path2D
+
+@export var green_smoke_scene : PackedScene
+@export var blue_smoke_scene : PackedScene
+@export var yellow_smoke_scene : PackedScene
+
+enum Smoke_Type {Green, Blue, Yellow}
+@export var smoke_type : Smoke_Type
+
+var smoke_scene : PackedScene
+
+@export var random_spawn : bool = false
+@export var timer_wait_time : float = 0.05
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	set_smoke_scene(smoke_type)
+	$SmokeTimer.wait_time = timer_wait_time
+
+
+func set_smoke_scene(type : Smoke_Type) -> void:
+	# Set the type and then reset the scene used
+	smoke_type = type
+	match smoke_type:
+		Smoke_Type.Green:
+			smoke_scene = green_smoke_scene
+		Smoke_Type.Blue:
+			smoke_scene = blue_smoke_scene
+		Smoke_Type.Yellow:
+			smoke_scene = yellow_smoke_scene
+
+
+func start_timer(on : bool) -> void:
+	if on:
+		$SmokeTimer.start()
+	else:
+		$SmokeTimer.stop()
+
+
+
+func spawn_smoke() -> void:
+	# Create a new instance of the Mob Scene
+	var smoke : Node = smoke_scene.instantiate()
+	
+	# Continue the circle along the Path2D at an interval, it will reset to zero once it goes over 1
+	var smoke_spawn_location : PathFollow2D = $SmokeSpawnLocation
+	if random_spawn:
+		smoke_spawn_location.progress_ratio = randf_range(0.0, 1.0)
+	else:
+		# increment by a set amount
+		smoke_spawn_location.progress_ratio = smoke_spawn_location.progress_ratio + 0.1
+	
+	# Set the mob's position to the location
+	smoke.position = smoke_spawn_location.position
+	
+	# Set the mob's direction prependicular to the path direction.
+	var direction : float = smoke_spawn_location.rotation - (PI / 2)
+	
+	# Add some randomness to the direction.
+	direction += randf_range(-PI / 4, PI / 4)
+	smoke.rotation = direction
+	
+	# Choose the velocity for the mob.
+	var smoke_velocity : float = 10.0
+	var velocity : Vector2 = Vector2(randf_range(smoke_velocity - 5.0, smoke_velocity), smoke_velocity)
+	smoke.linear_velocity = velocity.rotated(direction)
+	
+	# Spawn the mob by adding it to the Main scene.
+	add_child(smoke)
+
+
+func _on_smoke_timer_timeout() -> void:	
+	spawn_smoke()
+	
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5faj0"]
 size = Vector2(207, 176)
@@ -29,6 +115,14 @@ texture = ExtResource("2_yxjb8")
 
 [node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=184698422]
 y_sort_enabled = true
+
+[node name="UNIQUE_SmokeSpawnerPath" parent="Y_Sorted_Sprites" unique_id=1799699859 instance=ExtResource("4_320fo")]
+position = Vector2(589, 167)
+curve = SubResource("Curve2D_320fo")
+script = SubResource("GDScript_1pgkr")
+smoke_type = 1
+random_spawn = true
+timer_wait_time = 0.2
 
 [node name="Player" parent="Y_Sorted_Sprites" unique_id=1573098926 instance=ExtResource("3_jn05g")]
 y_sort_enabled = true

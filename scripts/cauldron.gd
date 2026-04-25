@@ -20,6 +20,7 @@ func _ready() -> void:
 			smoke_scene = blue_smoke_scene
 		Smoke_Type.Yellow:
 			smoke_scene = yellow_smoke_scene
+	$SmokeSpawnerPath.set_smoke_scene(smoke_type)
 	create_initial_smoke_cloud()
 
 
@@ -69,32 +70,4 @@ func create_initial_smoke_cloud() -> void:
 	create_smoke_ring(10, 40, 10, 500)
 	create_smoke_ring(0, 20, 0, 600)
 	
-	
-	
-
-func _on_smoke_timer_timeout() -> void:
-	# Create a new instance of the Mob Scene
-	var smoke : Node = smoke_scene.instantiate()
-	
-	# Continue the circle along the Path2D at an interval, it will reset to zero once it goes over 1
-	var smoke_spawn_location : PathFollow2D = $SmokePath/SmokeSpawnLocation
-	smoke_spawn_location.progress_ratio = smoke_spawn_location.progress_ratio + 0.1
-	
-	# Set the mob's position to the location
-	smoke.position = smoke_spawn_location.position
-	
-	# Set the mob's direction prependicular to the path direction.
-	var direction : float = smoke_spawn_location.rotation - (PI / 2)
-	
-	# Add some randomness to the direction.
-	direction += randf_range(-PI / 4, PI / 4)
-	smoke.rotation = direction
-	
-	# Choose the velocity for the mob.
-	var smoke_velocity : float = 10.0
-	var velocity : Vector2 = Vector2(randf_range(smoke_velocity - 5.0, smoke_velocity), smoke_velocity)
-	smoke.linear_velocity = velocity.rotated(direction)
-	
-	# Spawn the mob by adding it to the Main scene.
-	add_child(smoke)
 	

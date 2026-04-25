@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bey0784xapumb"]
+
+[ext_resource type="Script" uid="uid://cm182200ixoiu" path="res://scenes/smoke_spawner_path.gd" id="1_m38tc"]
+[ext_resource type="PackedScene" uid="uid://c5cvitjvqa1u0" path="res://scenes/green_smoke.tscn" id="2_ypf64"]
+[ext_resource type="PackedScene" uid="uid://didmea1s1mxet" path="res://scenes/blue_smoke.tscn" id="3_amw85"]
+[ext_resource type="PackedScene" uid="uid://b4i0a3t8k25dv" path="res://scenes/yellow_smoke.tscn" id="4_gt42b"]
+
+[sub_resource type="Curve2D" id="Curve2D_ftwdo"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 0, 0, -1)
+}
+point_count = 5
+
+[node name="SmokeSpawnerPath" type="Path2D" unique_id=1799699859]
+y_sort_enabled = true
+curve = SubResource("Curve2D_ftwdo")
+script = ExtResource("1_m38tc")
+green_smoke_scene = ExtResource("2_ypf64")
+blue_smoke_scene = ExtResource("3_amw85")
+yellow_smoke_scene = ExtResource("4_gt42b")
+metadata/_edit_group_ = true
+
+[node name="SmokeSpawnLocation" type="PathFollow2D" parent="." unique_id=824616167]
+y_sort_enabled = true
+position = Vector2(0, -1)
+rotation = -0.78539807
+progress = 5.656854
+
+[node name="SmokeTimer" type="Timer" parent="." unique_id=91901967]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="SmokeTimer" to="." method="_on_smoke_timer_timeout"]
