@@ -9,6 +9,8 @@ signal lose_game
 var screen_size : Vector2 # game window size
 var accept_input : bool = true # accepts directional input from the player
 
+var vomitting : bool = false
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -41,14 +43,17 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_smoke_hitbox_body_entered(body: Node2D) -> void:	
-	if body is GreenSmoke:
+	if body is GreenSmoke and not vomitting:
 		# Only allow the stronger smoke to kill you to be more forgiving on loss
 		var smoke : Smoke = body as Smoke
 		if smoke.strength > 100:
 			#print("Smoke hit, you lose! SmokeStrength:" + str(body.strength))
 			lose_game.emit()
+			vomit()
 			
 func vomit() -> void:
+	$VomitSound.play()
 	$AnimatedSprite2D.animation = "vomit"
 	$AnimatedSprite2D.play()
 	accept_input = false
+	vomitting = true

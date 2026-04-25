@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://418tnp5f1iwr" path="res://art/player_walk_right_2.png" id="6_d2wvv"]
 [ext_resource type="Texture2D" uid="uid://crf7mut4fgflu" path="res://art/player_walk_up_1.png" id="7_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://c1x7fi5dt2d1x" path="res://art/player_walk_up_2.png" id="8_jej6c"]
+[ext_resource type="AudioStream" uid="uid://be8tc4ly6mra5" path="res://sound/vomit_sound.mp3" id="11_d2wvv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_onrkg"]
 animations = [{
@@ -92,5 +93,10 @@ collision_mask = 2
 position = Vector2(-1.0033054, 4)
 shape = SubResource("RectangleShape2D_i3pqv")
 debug_color = Color(0.88769287, 0.00028243125, 0.8027765, 0.41960785)
+
+[node name="VomitSound" type="AudioStreamPlayer" parent="." unique_id=1592783928]
+stream = ExtResource("11_d2wvv")
+volume_db = -20.0
+pitch_scale = 1.2
 
 [connection signal="body_entered" from="SmokeHitbox" to="." method="_on_smoke_hitbox_body_entered"]
