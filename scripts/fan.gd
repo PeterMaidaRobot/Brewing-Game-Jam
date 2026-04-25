@@ -21,6 +21,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and player_in_range:
 		# Toggle the fan
+		$SwitchSound.play()
 		fan_on = !fan_on
 		if fan_on:
 			turn_on()
@@ -54,5 +55,6 @@ func _on_interact_trigger_body_exited(body: Node2D) -> void:
 
 
 func _on_yellow_smoke_trigger_body_entered(body: Node2D) -> void:
-	if body is YellowSmoke:
+	if body is YellowSmoke and !fan_on:
+		$SwitchSound.play()
 		turn_on()

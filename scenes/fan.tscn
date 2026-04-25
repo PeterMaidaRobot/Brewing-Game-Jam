@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccumv1cvheylj" path="res://art/fan_off.png" id="2_3ml7w"]
 [ext_resource type="Texture2D" uid="uid://he6eormtribf" path="res://art/fan_on.png" id="3_tc01m"]
 [ext_resource type="PackedScene" uid="uid://uoxhc115f880" path="res://scenes/breeze.tscn" id="4_tc01m"]
+[ext_resource type="AudioStream" uid="uid://bhph83hy6rfng" path="res://sound/light_switch.mp3" id="5_01qld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qoasc"]
 size = Vector2(30, 22)
@@ -77,6 +78,11 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="YellowSmokeTrigger" unique_id=1954107454]
 position = Vector2(-1, 5)
 shape = SubResource("RectangleShape2D_05mpp")
+
+[node name="SwitchSound" type="AudioStreamPlayer" parent="." unique_id=892589794]
+stream = ExtResource("5_01qld")
+volume_db = -25.0
+pitch_scale = 0.8
 
 [connection signal="body_entered" from="InteractTrigger" to="." method="_on_interact_trigger_body_entered"]
 [connection signal="body_exited" from="InteractTrigger" to="." method="_on_interact_trigger_body_exited"]
