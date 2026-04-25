@@ -23,7 +23,7 @@ texture = ExtResource("2_fsnos")
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("3_mxx4w")]
 position = Vector2(591, 28)
 scale = Vector2(7.801929, 2.8393373)
-next_level_num = 99
+next_level_num = 6
 
 [node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=1252630077]
 y_sort_enabled = true
@@ -39,7 +39,7 @@ scale = Vector2(1.233, 1.234)
 fan_on = true
 child_breeze_dir = Vector2(1, 0)
 
-[node name="Cauldron3" parent="Y_Sorted_Sprites" unique_id=1879012879 instance=ExtResource("6_dwyms")]
+[node name="Cauldron2" parent="Y_Sorted_Sprites" unique_id=1879012879 instance=ExtResource("6_dwyms")]
 y_sort_enabled = true
 position = Vector2(841, 275)
 

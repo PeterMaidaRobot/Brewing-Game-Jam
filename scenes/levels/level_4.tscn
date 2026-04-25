@@ -22,7 +22,7 @@ texture = ExtResource("2_ts8eg")
 [node name="Goal" parent="." unique_id=573352576 instance=ExtResource("2_5vn0v")]
 position = Vector2(591, 28)
 scale = Vector2(5.8819265, 2.8393373)
-next_level_num = 99
+next_level_num = 5
 
 [node name="Y_Sorted_Sprites" type="Node2D" parent="." unique_id=1030978628]
 y_sort_enabled = true
