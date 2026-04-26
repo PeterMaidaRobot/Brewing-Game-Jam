@@ -24,6 +24,8 @@ func setup_buttons() -> void:
 		$LevelScreen/Level2Button,
 		$LevelScreen/Level3Button,
 		$LevelScreen/Level4Button,
+		$LevelScreen/Level5Button,
+		$LevelScreen/Level6Button,
 		$LevelScreen/FinaleButton,
 	]
 	for button : Button in buttons:
