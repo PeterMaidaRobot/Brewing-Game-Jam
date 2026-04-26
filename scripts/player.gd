@@ -5,7 +5,7 @@ extends CharacterBody2D
 signal lose_game
 
 
-@export var speed : int = 200 # pixels per second player speed
+@export var speed : int = 150 # pixels per second player speed
 var screen_size : Vector2 # game window size
 var accept_input : bool = true # accepts directional input from the player
 
@@ -27,9 +27,10 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_pressed("move_left"):
 			$AnimatedSprite2D.animation = "walk_right"
 			$AnimatedSprite2D.flip_h = true
-		if Input.is_action_pressed("move_down"):
+		# Favotr the left/right sprite over the top/down sprite on diagonal movement
+		if Input.is_action_pressed("move_down") and direction.x == 0:
 			$AnimatedSprite2D.animation = "walk_down"
-		if Input.is_action_pressed("move_up"):
+		if Input.is_action_pressed("move_up") and direction.x == 0:
 			$AnimatedSprite2D.animation = "walk_up"
 		
 		if direction.length() > 0:
@@ -37,7 +38,11 @@ func _physics_process(delta: float) -> void:
 			position = position.clamp(Vector2.ZERO, screen_size)
 			$AnimatedSprite2D.play()
 		else:
-			$AnimatedSprite2D.stop()
+			# We have an idle animation for left/right movement, but none for up/down right now...
+			if $AnimatedSprite2D.animation == "walk_right":
+				$AnimatedSprite2D.animation = "idle_right"
+			else:
+				$AnimatedSprite2D.stop()
 		
 		move_and_slide()
 
