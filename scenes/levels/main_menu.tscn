@@ -71,7 +71,7 @@ offset_right = 40.0
 grow_vertical = 0
 theme_override_colors/font_color = Color(0.53333336, 0.53333336, 0.53333336, 0.70980394)
 theme_override_fonts/font = ExtResource("3_721jg")
-text = " v2"
+text = " v3"
 
 [node name="LevelScreen" type="Control" parent="." unique_id=1666513167]
 visible = false
