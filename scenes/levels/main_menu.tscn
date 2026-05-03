@@ -220,7 +220,7 @@ volume_db = -30.0
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=696287903]
 stream = ExtResource("6_keln3")
-volume_db = -10.0
+volume_db = -20.0
 autoplay = true
 
 [connection signal="pressed" from="MenuScreen/NewGameButton" to="." method="_on_new_game_button_pressed"]
