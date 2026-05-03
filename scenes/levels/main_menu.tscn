@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://bptarglxropm6" path="res://fonts/MagicRed-lxwDV.ttf" id="3_721jg"]
 [ext_resource type="AudioStream" uid="uid://bdxqy5a3trx20" path="res://sound/menu_hover.mp3" id="4_geflf"]
 [ext_resource type="AudioStream" uid="uid://0r8savqw082y" path="res://sound/menu_click.mp3" id="5_fkd6t"]
+[ext_resource type="AudioStream" uid="uid://bkxpwyf6k8fvn" path="res://sound/background_music_zen.mp3" id="6_keln3"]
 
 [node name="MainMenu" type="CanvasLayer" unique_id=572550495]
 script = ExtResource("1_fsby3")
@@ -216,6 +217,11 @@ pitch_scale = 0.8
 [node name="MenuClickSound" type="AudioStreamPlayer" parent="." unique_id=948079285]
 stream = ExtResource("5_fkd6t")
 volume_db = -30.0
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="." unique_id=696287903]
+stream = ExtResource("6_keln3")
+volume_db = -10.0
+autoplay = true
 
 [connection signal="pressed" from="MenuScreen/NewGameButton" to="." method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MenuScreen/LevelSelectButton" to="." method="_on_level_select_button_pressed"]
